@@ -20,7 +20,8 @@ const ContactPopup = ({ isOpen, onClose }) => {
 
     try {
       // 🔹 Use your backend API URL (update if needed)
-      const response = await axios.post('/api/contact/submit', formData);
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+      const response = await axios.post(`${apiUrl}/api/contact/submit`, formData);
 
       setMessage(response.data.message || 'Form submitted successfully!');
       console.log(response.data.message || 'Form submitted successfully!');
