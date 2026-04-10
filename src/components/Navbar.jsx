@@ -34,6 +34,7 @@ const Navbar = ({ openContactPopup }) => {
             {[
               { path: '/', label: 'Home' },
               { path: '/products', label: 'Courses' },
+              { path: '/success-stories', label: 'Testimonials' },
               { path: '/blog', label: 'Blog' },
             ].map((item) => (
               <Link
@@ -87,11 +88,13 @@ const Navbar = ({ openContactPopup }) => {
                 {[
                   { path: '/', label: 'Home' },
                   { path: '/products', label: 'Courses' },
+                  { path: '/success-stories', label: 'Testimonials' },
                   { path: '/blog', label: 'Blog' },
                 ].map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
+                    onClick={() => setIsMenuOpen(false)}
                     className="block rounded-2xl px-4 py-3 text-slate-700 font-medium transition duration-300 hover:bg-slate-100 hover:text-sky-600"
                   >
                     {item.label}

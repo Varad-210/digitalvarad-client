@@ -9,7 +9,7 @@ import SuccessStories from './pages/SuccessStories';
 import Blogs from './pages/Blogs';
 import BlogPost from './pages/BlogPost';
 import ContactPopup from './components/ContactPopup';
-import router from './router';
+
 
 
 function App() {
