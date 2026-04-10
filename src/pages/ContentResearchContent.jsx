@@ -347,7 +347,7 @@ const ContentResearchContent = () => {
         </ul>
       </Section>
 
-      <Section id="cta" number="12" title="🚀 Strong CTA — Join Biz-Creator Community">
+      <Section id="cta" number="12" title="🚀 Join Biz-Creator Community">
         <div className="bg-gradient-to-br from-primary-600 to-primary-900 rounded-[2rem] p-8 md:p-14 text-white text-center shadow-2xl relative overflow-hidden">
           {/* Decorative shapes */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
