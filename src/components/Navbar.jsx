@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logo from '../assets/logo.png';
 
 const Navbar = ({ openContactPopup }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,17 +12,11 @@ const Navbar = ({ openContactPopup }) => {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center mb-1">
-            <div className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 p-2 rounded-lg mr-3 shadow-lg">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
+            <img
+              src={logo}
+              alt="VaradBuilds logo"
+              className="w-10 h-10 rounded-2xl shadow-lg mr-3 object-cover"
+            />
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">VaradBuilds</h3>
           </div>
 
