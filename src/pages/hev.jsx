@@ -88,7 +88,7 @@ const Home = ({ openContactPopup }) => {
       id: 3,
       name: "Ritesh Agarwal",
       role: "Founder & CEO, OYO Rooms",
-      avatar: "https://live.skift.com/wp-content/uploads/2025/02/DSC04290-1-rotated-e1741106435831.jpg?w=1024"
+      avatar: "https://live.skift.com/wp-content/uploads/2026/02/DSC04290-1-rotated-e1741106435831.jpg?w=1024"
     },
     {
       id: 4,

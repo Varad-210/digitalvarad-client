@@ -20,7 +20,7 @@ const HighIncomeSkillsContent = () => {
           {[
             'What high income skills are',
             'Why students must learn them',
-            'Top high income skills in 2025',
+            'Top high income skills in 2026',
             '90-day roadmap to start',
             'How to begin using just your mobile',
           ].map(item => (
@@ -64,7 +64,7 @@ const HighIncomeSkillsContent = () => {
       </Section>
 
       {/* ─── Section 4: Top Skills ─── */}
-      <Section id="top-skills" number="4" title="Top High Income Skills in 2025 📈">
+      <Section id="top-skills" number="4" title="Top High Income Skills in 2026 📈">
         <p>Here are some of the most in-demand high income skills students can learn:</p>
 
         {[

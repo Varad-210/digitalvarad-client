@@ -93,7 +93,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <p>&copy; 2025 VaradBuilds. All rights reserved.</p>
+            <p>&copy; 2026 VaradBuilds. All rights reserved.</p>
             <p className="text-sm text-gray-600 mt-1">Built with 💙 by Varad Mahadev Sontakke</p>
           </div>
           <div className="flex space-x-6 text-sm">

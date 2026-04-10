@@ -227,7 +227,7 @@ const ContentResearchContent = () => {
             </div>
             <div className="hidden sm:block text-right">
               <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400 block mb-1">Example</span>
-              <span className="font-medium bg-white px-3 py-1 rounded shadow-sm text-sm border border-gray-100">"Skills students should learn in 2025"</span>
+              <span className="font-medium bg-white px-3 py-1 rounded shadow-sm text-sm border border-gray-100">"Skills students should learn in 2026"</span>
             </div>
           </div>
           
