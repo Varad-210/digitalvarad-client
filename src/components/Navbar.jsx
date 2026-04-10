@@ -1,10 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from '../assets/logo.png';
 
 const Navbar = ({ openContactPopup }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  const menuItems = [
+    { path: '/', label: 'Home' },
+    { path: '/products', label: 'Courses' },
+    { path: '/success-stories', label: 'Testimonials' },
+    { path: '/blog', label: 'Blog' },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-2xl shadow-slate-200/60">
@@ -77,38 +91,39 @@ const Navbar = ({ openContactPopup }) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden"
-          >
-            <div className="mt-3 overflow-hidden rounded-3xl border border-slate-200 bg-white/95 shadow-xl shadow-slate-200/40">
-              <div className="flex flex-col px-4 py-4 space-y-2">
-                {[
-                  { path: '/', label: 'Home' },
-                  { path: '/products', label: 'Courses' },
-                  { path: '/success-stories', label: 'Testimonials' },
-                  { path: '/blog', label: 'Blog' },
-                ].map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block rounded-2xl px-4 py-3 text-slate-700 font-medium transition duration-300 hover:bg-slate-100 hover:text-sky-600"
+          <div className="md:hidden">
+            <div
+              className="fixed inset-0 z-40 bg-slate-900/40"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="fixed inset-x-0 top-20 z-50 px-4"
+            >
+              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white/95 shadow-xl shadow-slate-200/40">
+                <div className="flex flex-col px-4 py-4 space-y-2">
+                  {menuItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block rounded-2xl px-4 py-3 text-slate-700 font-medium transition duration-300 hover:bg-slate-100 hover:text-sky-600"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <button
+                    onClick={openContactPopup}
+                    className="mt-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-center font-semibold text-white transition duration-300 hover:brightness-110"
                   >
-                    {item.label}
-                  </Link>
-                ))}
-                <button
-                  onClick={openContactPopup}
-                  className="mt-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-center font-semibold text-white transition duration-300 hover:brightness-110"
-                >
-                  Contact Us
-                </button>
+                    Contact Us
+                  </button>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         )}
       </div>
     </nav>
