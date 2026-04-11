@@ -7,6 +7,8 @@ import SalesMarketingContent from './SalesMarketingContent';
 import AffiliateGrowthContent from './AffiliateGrowthContent';
 import TopAIToolsContent from './TopAIToolsContent';
 import ContentResearchContent from './ContentResearchContent';
+import { blogPosts } from './Blogs';
+
 
 const blogData = {
   'how-to-do-content-research': {
@@ -208,6 +210,12 @@ const BlogPost = () => {
 
   const post = blogData[slug];
   const tocItems = tocItemsBySlug[slug] || [];
+  const otherPosts = blogPosts.filter(p => p.id !== slug).slice(0, 2);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -311,6 +319,28 @@ const BlogPost = () => {
 
           <article className="flex-1 bg-white rounded-2xl shadow-md border border-gray-200 p-8 md:p-12 max-w-3xl">
             {renderBlogContent(slug)}
+
+            {/* Internal Links to Other Blogs */}
+            <div className="mt-16 pt-10 border-t border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Explore More Topics</h3>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {otherPosts.map((otherPost) => (
+                  <Link 
+                    key={otherPost.id} 
+                    to={`/blog/${otherPost.id}`}
+                    className="flex flex-col bg-gray-50 rounded-xl p-5 border border-gray-100 hover:shadow-md hover:border-primary-200 transition duration-300 group"
+                  >
+                    <span className="text-3xl mb-3">{otherPost.emoji}</span>
+                    <h4 className="font-bold text-gray-900 group-hover:text-primary-600 transition-colors mb-2 line-clamp-2">
+                      {otherPost.title}
+                    </h4>
+                    <p className="text-xs text-gray-500 font-medium tracking-wide uppercase mt-auto">
+                      {otherPost.category} · {otherPost.readTime}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </article>
         </div>
       </div>

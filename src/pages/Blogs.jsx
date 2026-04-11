@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const blogPosts = [
+export const blogPosts = [
   {
     id: 'how-to-do-content-research',
     title: 'How to Do Content Research (Complete Beginner Guide for Consistent Growth)',

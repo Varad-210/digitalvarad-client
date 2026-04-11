@@ -13,10 +13,20 @@ const Navbar = ({ openContactPopup }) => {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const handleGlobalClick = () => {
+      if (isMenuOpen) setIsMenuOpen(false);
+    };
+    if (isMenuOpen) {
+      document.addEventListener('click', handleGlobalClick);
+    }
+    return () => document.removeEventListener('click', handleGlobalClick);
+  }, [isMenuOpen]);
+
   const menuItems = [
     { path: '/', label: 'Home' },
     { path: '/products', label: 'Courses' },
-    { path: '/success-stories', label: 'Testimonials' },
+    { path: '/about', label: 'About Us' },
     { path: '/blog', label: 'Blog' },
   ];
 
@@ -43,12 +53,11 @@ const Navbar = ({ openContactPopup }) => {
             </div>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {[
               { path: '/', label: 'Home' },
               { path: '/products', label: 'Courses' },
-              { path: '/success-stories', label: 'Testimonials' },
+              { path: '/about', label: 'About Us' },
               { path: '/blog', label: 'Blog' },
             ].map((item) => (
               <Link
@@ -72,7 +81,10 @@ const Navbar = ({ openContactPopup }) => {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsMenuOpen(!isMenuOpen);
+              }}
               className="inline-flex items-center justify-center h-11 w-11 rounded-full border border-slate-200 bg-white/90 text-slate-700 shadow-sm shadow-slate-200/50 transition duration-300 hover:border-sky-300 hover:text-sky-600"
               aria-label="Toggle navigation menu"
             >

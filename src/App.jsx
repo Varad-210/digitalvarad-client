@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import AboutUs from './pages/AboutUs';
-import SuccessStories from './pages/SuccessStories';
 import Blogs from './pages/Blogs';
 import BlogPost from './pages/BlogPost';
 import ContactPopup from './components/ContactPopup';
@@ -27,7 +26,6 @@ function App() {
         <Route path="/" element={<Home openContactPopup={openContactPopup} />} />
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/success-stories" element={<SuccessStories />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
