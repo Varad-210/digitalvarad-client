@@ -50,7 +50,7 @@ const AffiliateGrowthContent = () => {
         <p className="font-bold text-secondary-600 text-xl mt-6 mb-3">✅ Solution: Night To-Do System</p>
         <p>Start creating a <strong>Night To-Do List</strong>.</p>
         
-        <div className="bg-secondary-50 rounded-xl p-5 border border-secondary-200 my-4">
+        <div className="bg-gradient-to-br from-emerald-50 to-white rounded-xl p-5 border border-emerald-100 my-4 shadow-sm">
           <p className="font-semibold text-gray-900 mb-3">Before sleeping:</p>
           <ul className="space-y-2">
             {[
@@ -59,7 +59,7 @@ const AffiliateGrowthContent = () => {
               'Note what you achieved today',
             ].map(item => (
               <li key={item} className="flex items-center gap-2 text-gray-700">
-                <span className="text-secondary-600 font-bold">✔</span>
+                <span className="text-emerald-600 font-bold">✔</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -161,7 +161,7 @@ const AffiliateGrowthContent = () => {
         <p className="font-bold text-secondary-600 text-xl mt-6 mb-3">✅ Solution: Weekly Content System</p>
         <p>Create a simple weekly plan:</p>
 
-        <div className="bg-secondary-50 rounded-xl p-5 border border-secondary-200 my-4">
+        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-5 border border-emerald-100 my-4 shadow-sm">
           <ul className="space-y-2">
             {[
               'Decide 2 days for shooting content',
@@ -169,7 +169,7 @@ const AffiliateGrowthContent = () => {
               'Daily story posting',
             ].map(item => (
               <li key={item} className="flex items-center gap-2 text-gray-700">
-                <span className="text-secondary-600 font-bold">✔</span>
+                <span className="text-emerald-600 font-bold">✔</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -300,9 +300,9 @@ const AffiliateGrowthContent = () => {
           <p className="font-bold text-primary-600 text-xl">Success depends on action.</p>
         </div>
 
-        <div className="bg-gradient-to-br from-secondary-500 to-secondary-700 text-white rounded-xl p-8 text-center my-6">
+        <div className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-xl p-8 text-center my-6 shadow-xl shadow-emerald-200">
           <p className="font-bold text-3xl mb-3">The decision is yours.</p>
-          <p className="text-secondary-100 text-lg">Will you continue the same way, or will you start the 6-month routine today?</p>
+          <p className="text-emerald-50 text-lg">Will you continue the same way, or will you start the 6-month routine today?</p>
         </div>
       </Section>
 

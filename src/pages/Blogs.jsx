@@ -184,18 +184,19 @@ const Blogs = () => {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col border border-primary-100 hover:shadow-xl transition-all duration-300"
               >
                 {/* Card Top Banner */}
-                <div className="bg-gradient-to-br from-primary-400 to-primary-600 p-8 flex items-center justify-center">
-                  <span className="text-7xl">{post.emoji}</span>
+                <div className="bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#4338ca] p-8 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-white/10 opacity-50 blur-2xl"></div>
+                  <span className="text-7xl relative z-10 drop-shadow-2xl">{post.emoji}</span>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-6 flex flex-col flex-1">
                   {post.featured && (
-                    <span className="inline-block bg-primary-100 text-primary-600 text-xs font-bold px-3 py-1 rounded-full mb-3 w-fit">
+                    <span className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-[10px] font-black px-3 py-1 rounded-lg mb-3 w-fit shadow-md shadow-emerald-200/50 uppercase tracking-wider">
                       ⭐ Featured
                     </span>
                   )}
-                  <span className="text-xs text-primary-500 font-semibold uppercase tracking-wide mb-2">
+                  <span className="text-[10px] font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent uppercase tracking-[0.15em] mb-2">
                     {post.category}
                   </span>
                   <h2 className="text-xl font-bold text-gray-900 mb-1 leading-snug">
@@ -209,7 +210,7 @@ const Blogs = () => {
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-primary-50 text-primary-600 text-xs px-2 py-1 rounded-full border border-primary-200"
+                        className="bg-blue-50/50 text-blue-700 text-[10px] font-bold px-2.5 py-1 rounded-md border border-blue-100 shadow-sm"
                       >
                         #{tag}
                       </span>
@@ -223,7 +224,7 @@ const Blogs = () => {
                     </div>
                     <Link
                       to={`/blog/${post.id}`}
-                      className="bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition duration-300"
+                      className="bg-gradient-to-r from-[#2563eb] to-[#4338ca] hover:scale-105 transition-transform text-white text-xs font-black px-5 py-2.5 rounded-xl shadow-lg shadow-blue-200/50 uppercase tracking-widest"
                     >
                       Read Now →
                     </Link>

@@ -218,18 +218,30 @@ const BlogPost = () => {
 
 
   useEffect(() => {
-    const handleScroll = () => {
-      for (let i = tocItems.length - 1; i >= 0; i--) {
-        const el = document.getElementById(tocItems[i].id);
-        if (el && window.scrollY >= el.offsetTop - 140) {
-          setActiveSection(tocItems[i].id);
-          break;
-        }
-      }
+    const observerOptions = {
+      root: null,
+      rootMargin: '-150px 0px -60% 0px',
+      threshold: 0
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [tocItems]);
+
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    
+    // Observer each section
+    tocItems.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [tocItems, slug]); // Re-run when slug or items change
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -296,19 +308,25 @@ const BlogPost = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex gap-10 items-start">
-          <aside className="hidden xl:block w-64 flex-shrink-0 sticky top-24 self-start">
-            <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-5">
-              <p className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-4">📋 Contents</p>
-              <nav className="space-y-1 max-h-[70vh] overflow-y-auto pr-1">
+          <aside className="hidden xl:block w-72 flex-shrink-0 sticky top-28 self-start transition-all duration-300">
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-gray-100 p-6">
+              <div className="flex items-center gap-2 mb-6 pb-4 border-b border-gray-50">
+                <span className="w-2 h-6 bg-primary-500 rounded-full"></span>
+                <p className="text-sm font-black text-gray-800 uppercase tracking-widest">On This Page</p>
+              </div>
+              <nav className="space-y-1 max-h-[calc(100vh-280px)] overflow-y-auto custom-scrollbar pr-2">
                 {tocItems.map((item) => (
                   <a
                     key={item.id}
                     href={`#${item.id}`}
-                    className={`block text-sm py-1.5 px-3 rounded-lg transition-all duration-200 ${activeSection === item.id
-                        ? 'bg-primary-500 text-white font-semibold'
-                        : 'text-gray-600 hover:bg-primary-50 hover:text-primary-600'
+                    className={`group flex items-center gap-3 text-sm py-2.5 px-4 rounded-xl transition-all duration-300 ${activeSection === item.id
+                        ? 'bg-primary-500 text-white font-bold shadow-lg shadow-primary-200 translate-x-1'
+                        : 'text-gray-500 hover:bg-gray-50 hover:text-primary-600 hover:translate-x-1'
                       }`}
                   >
+                    <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                      activeSection === item.id ? 'bg-white scale-100' : 'bg-gray-300 group-hover:bg-primary-300'
+                    }`}></span>
                     {item.label}
                   </a>
                 ))}
