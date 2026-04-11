@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Products from './pages/Products';
-import AboutUs from './pages/AboutUs';
+
 import Blogs from './pages/Blogs';
 import BlogPost from './pages/BlogPost';
 import ContactPopup from './components/ContactPopup';
@@ -36,7 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home openContactPopup={openContactPopup} />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/about" element={<AboutUs />} />
+
         <Route path="/blog" element={<Blogs />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>

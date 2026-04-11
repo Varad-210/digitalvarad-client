@@ -17,8 +17,8 @@ const blogData = {
     category: 'Content Creation',
     readTime: '10 min read',
     date: 'April 9, 2026',
-    author: 'Biz-Creator Community',
-    authorHandle: '@skillmint.in',
+    author: 'Varad Sontakke',
+    authorHandle: '@varadbuilds',
   },
   'top-50-ai-tools': {
     title: 'Top 50 AI Tools to Build Online Business',
@@ -26,8 +26,8 @@ const blogData = {
     category: 'AI Tools & Tech',
     readTime: '15 min read',
     date: 'April 9, 2026',
-    author: 'Biz-Creator Community',
-    authorHandle: '@skillmint.in',
+    author: 'Varad Sontakke',
+    authorHandle: '@varadbuilds',
   },
   'sell-bizgurukul-instagram': {
     title: 'How to Sell Bizgurukul on Instagram and Earn ₹800 to ₹14,000 Per Sale',
@@ -35,8 +35,8 @@ const blogData = {
     category: 'Affiliate Marketing',
     readTime: '18 min read',
     date: 'April 9, 2026',
-    author: 'Biz-Creator Community',
-    authorHandle: '@skillmint.in',
+    author: 'Varad Sontakke',
+    authorHandle: '@varadbuilds',
   },
   'escape-the-matrix': {
     title: 'Escape the Matrix: Why the Education System Keeps Students Trapped',
@@ -44,8 +44,8 @@ const blogData = {
     category: 'Mindset & Growth',
     readTime: '12 min read',
     date: 'April 9, 2026',
-    author: 'Biz-Creator Community',
-    authorHandle: '@skillmint.in',
+    author: 'Varad Sontakke',
+    authorHandle: '@varadbuilds',
   },
   'high-income-skills': {
     title: 'High Income Skills: The Ultimate Guide for Students to Achieve Financial Freedom',
@@ -53,8 +53,8 @@ const blogData = {
     category: 'Skills & Learning',
     readTime: '10 min read',
     date: 'April 9, 2026',
-    author: 'Biz-Creator Community',
-    authorHandle: '@skillmint.in',
+    author: 'Varad Sontakke',
+    authorHandle: '@varadbuilds',
   },
   'sales-and-marketing': {
     title: 'Sales and Marketing: The Two Skills Every Student Must Learn to Earn Online',
@@ -62,8 +62,8 @@ const blogData = {
     category: 'Sales & Marketing',
     readTime: '11 min read',
     date: 'April 9, 2026',
-    author: 'Biz-Creator Community',
-    authorHandle: '@skillmint.in',
+    author: 'Varad Sontakke',
+    authorHandle: '@varadbuilds',
   },
   'affiliate-marketing-growth': {
     title: 'Why Beginners Don\'t Grow in Affiliate Marketing — The 6-Month Routine That Makes You Unstoppable',
@@ -71,7 +71,7 @@ const blogData = {
     category: 'Affiliate Marketing',
     readTime: '13 min read',
     date: 'April 9, 2026',
-    author: 'Biz-Creator Community',
+    author: 'Varad Sontakke',
     authorHandle: '@skillmint.in',
   },
 };
@@ -278,6 +278,14 @@ const BlogPost = () => {
             <p className="text-blue-100 text-xl mb-6">{post.subtitle}</p>
             <div className="flex items-center justify-center gap-4 text-blue-200 text-sm">
               <span>✍️ {post.author}</span>
+              <a 
+                href={`https://instagram.com/${post.authorHandle.replace('@', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors underline decoration-blue-200"
+              >
+                {post.authorHandle}
+              </a>
               <span>·</span>
               <span>📅 {post.date}</span>
               <span>·</span>

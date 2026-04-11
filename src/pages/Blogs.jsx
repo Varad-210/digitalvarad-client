@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const blogPosts = [
   {
     id: 'how-to-do-content-research',
-    title: 'How to Do Content Research (Complete Beginner Guide for Consistent Growth)',
+    title: 'How to Do Content Research',
     subtitle: 'From clueless scrolling to a consistent content engine.',
     excerpt: 'Never run out of content ideas again. Learn the proven content research methods, content pillars, and smart ways to blend content and sales to attract your exact target audience without guessing.',
     category: 'Content Creation',
@@ -16,7 +16,7 @@ export const blogPosts = [
   },
   {
     id: 'top-50-ai-tools',
-    title: 'Top 50 AI Tools to Build Online Business (Complete Guide for Students & Beginners)',
+    title: 'Top 50 AI Tools to Build Online Business',
     subtitle: 'Build a full online business using AI tools — most of them are free!',
     excerpt: 'AI is changing how businesses are built. Discover the top 50 AI tools across design, video, writing, automation, and more. Perfect guide for students breaking into affiliate marketing and personal branding.',
     category: 'AI Tools & Tech',
@@ -142,7 +142,7 @@ const Blogs = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide border border-white/30">
-              📚 Biz-Creator Blog
+              📚 My Blogs
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
               Learn. <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Create.</span> Influence. <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Earn.</span>
