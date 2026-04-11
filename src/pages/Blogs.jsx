@@ -148,7 +148,7 @@ const Blogs = () => {
 
         {/* ── Grid of remaining posts ── */}
         {rest.length > 0 && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((post, i) => {
               const c = categoryColors[post.category] || { bg: 'bg-indigo-50', text: 'text-indigo-600', border: 'border-indigo-200' };
               return (
@@ -160,29 +160,40 @@ const Blogs = () => {
                 >
                   <Link
                     to={`/blog/${post.id}`}
-                    className="group flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-indigo-100/40 hover:border-indigo-200 transition-all duration-300 overflow-hidden h-full"
+                    className="group flex flex-col bg-white rounded-2xl border border-gray-100 hover:border-indigo-200 transition-all duration-300 overflow-hidden h-full relative"
+                    style={{
+                      boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow = '0 8px 30px rgba(99, 102, 241, 0.12)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+                    }}
                   >
-                    {/* Emoji area */}
-                    <div className="px-7 pt-8 pb-5 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #F8F9FE, #F0F1FF)' }}>
-                      <span className="text-5xl group-hover:scale-110 transition-transform duration-300 origin-left">{post.emoji}</span>
-                      <span className={`text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-xl ${c.bg} ${c.text}`}>{post.category}</span>
+                    {/* Emoji area with gradient background */}
+                    <div className="px-6 pt-6 pb-4 flex items-start justify-between" style={{ background: 'linear-gradient(135deg, #FAFBFF 0%, #F0F4FF 100%)' }}>
+                      <span className="text-4xl group-hover:scale-110 transition-transform duration-300 origin-left">{post.emoji}</span>
+                      <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-lg ${c.bg} ${c.text}`}>
+                        {post.category.split(' ')[0]}
+                      </span>
                     </div>
 
                     {/* Text content */}
-                    <div className="p-6 flex flex-col flex-1">
-                      <h3 className="font-bold text-gray-900 text-base leading-snug mb-2 line-clamp-2 group-hover:text-indigo-700 transition-colors">
+                    <div className="p-6 pt-4 flex flex-col flex-1">
+                      <h3 className="font-bold text-gray-900 text-lg leading-tight mb-3 line-clamp-2 group-hover:text-indigo-600 transition-colors">
                         {post.title}
                       </h3>
                       <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 mb-4 flex-1">{post.excerpt}</p>
 
-                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
-                        <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                      <div className="flex items-center justify-between mt-auto pt-3">
+                        <div className="flex items-center gap-1.5 text-xs text-gray-400 font-medium">
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                           {post.readTime}
                         </div>
-                        <span className="text-indigo-500 text-xs font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        <span className="text-indigo-600 text-sm font-semibold flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
                           Read
-                          <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                         </span>
                       </div>
                     </div>
