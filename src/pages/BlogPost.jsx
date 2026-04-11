@@ -383,14 +383,14 @@ const BlogPost = () => {
                           href={`#${item.id}`}
                           data-id={item.id}
                           className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200 mb-0.5 ${isActive
-                              ? "bg-indigo-50 text-indigo-700 font-semibold"
-                              : "text-gray-400 hover:text-gray-700 hover:bg-gray-50"
+                            ? "bg-indigo-50 text-indigo-700 font-semibold"
+                            : "text-gray-400 hover:text-gray-700 hover:bg-gray-50"
                             }`}
                         >
                           <span
                             className={`flex-shrink-0 w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-black ${isActive
-                                ? "bg-indigo-500 text-white"
-                                : "bg-gray-100 text-gray-300"
+                              ? "bg-indigo-500 text-white"
+                              : "bg-gray-100 text-gray-300"
                               }`}
                           >
                             {i + 1}
@@ -418,6 +418,62 @@ const BlogPost = () => {
                 </div>
 
               </motion.article>
+              {/* ── Internal Blog Recommendations ── */}
+              <div className="mt-12">
+
+                <div className="flex items-center gap-3 mb-6">
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Recommended Articles
+                  </h3>
+
+                  <div className="flex-1 h-px bg-gray-200"></div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {otherPosts.map((p, i) => {
+                    const c = categoryColors[p.category] || {
+                      bg: "bg-indigo-50",
+                      text: "text-indigo-600",
+                      dot: "bg-indigo-400",
+                    };
+
+                    return (
+                      <motion.div
+                        key={p.id}
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                      >
+                        <Link
+                          to={`/blog/${p.id}`}
+                          className="group flex flex-col bg-white rounded-2xl p-6 border border-gray-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 h-full"
+                        >
+                          <span className="text-3xl mb-4 block group-hover:scale-110 transition-transform">
+                            {p.emoji}
+                          </span>
+
+                          <h4 className="font-bold text-gray-800 text-sm leading-snug mb-3 line-clamp-2 group-hover:text-indigo-700">
+                            {p.title}
+                          </h4>
+
+                          <div className="mt-auto flex items-center gap-2 flex-wrap">
+                            <span
+                              className={`text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-lg ${c.bg} ${c.text}`}
+                            >
+                              {p.category}
+                            </span>
+
+                            <span className="text-[10px] text-gray-400 font-medium">
+                              {p.readTime}
+                            </span>
+                          </div>
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+              </div>
 
             </div>
           </div>

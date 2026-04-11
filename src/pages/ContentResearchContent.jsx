@@ -357,7 +357,7 @@ const ContentResearchContent = () => {
             <h3 className="text-3xl md:text-4xl font-black mb-4 leading-tight">Want to learn content creation <span className="text-secondary-400">step-by-step?</span></h3>
             <p className="mb-10 text-xl md:text-2xl font-medium text-[#D6D7F0]">Join <span className="font-bold text-white border-b-2 border-secondary-500">Biz-Creator Community</span>:</p>
             
-            <div className="bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-3xl inline-block text-left mb-10 border border-white/20">
+            <div className="bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-2xl p-7 space-y-4 my-6">
               <ul className="space-y-4">
                 <li className="flex items-center gap-4 text-lg md:text-xl font-medium">
                   <span className="bg-emerald-500 text-white p-1 rounded-full"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg></span>
