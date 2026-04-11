@@ -178,7 +178,7 @@ const AffiliateGrowthContent = () => {
 
         <div className="bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-xl p-6 text-center">
           <p className="font-bold text-xl">Remember: Consistency is more important than perfection.</p>
-          <p className="text-primary-100 mt-2">Even simple content posted consistently can build your audience.</p>
+          <p className="text-white mt-2 font-medium">Even simple content posted consistently can build your audience.</p>
         </div>
       </Section>
 
@@ -287,7 +287,7 @@ const AffiliateGrowthContent = () => {
 
         <div className="bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-xl p-8 text-center my-6">
           <p className="font-bold text-2xl mb-3">Your growth chances increase significantly.</p>
-          <p className="text-primary-100 text-lg">Consistency over time creates results.</p>
+          <p className="text-white text-lg font-medium">Consistency over time creates results.</p>
         </div>
       </Section>
 

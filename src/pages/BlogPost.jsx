@@ -278,14 +278,6 @@ const BlogPost = () => {
             <p className="text-blue-100 text-xl mb-6">{post.subtitle}</p>
             <div className="flex items-center justify-center gap-4 text-blue-200 text-sm">
               <span>✍️ {post.author}</span>
-              <a 
-                href={`https://instagram.com/${post.authorHandle.replace('@', '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors underline decoration-blue-200"
-              >
-                {post.authorHandle}
-              </a>
               <span>·</span>
               <span>📅 {post.date}</span>
               <span>·</span>
