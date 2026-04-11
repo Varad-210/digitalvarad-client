@@ -107,7 +107,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Full Name"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#383AB4]"
             />
 
             {/* Email */}
@@ -118,7 +118,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email Address"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#383AB4]"
             />
 
             {/* Phone */}
@@ -129,7 +129,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Phone / WhatsApp"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#383AB4]"
             />
 
             {/* City */}
@@ -140,7 +140,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
               value={formData.city}
               onChange={handleChange}
               placeholder="City"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#383AB4]"
             />
 
             {/* Age */}
@@ -151,7 +151,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
               value={formData.age}
               onChange={handleChange}
               placeholder="Age"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#383AB4]"
             />
 
             {/* Message */}
@@ -159,7 +159,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
               <div
                 className={`p-3 rounded-lg ${
                   message.toLowerCase().includes("success")
-                    ? "bg-green-100 text-green-700"
+                    ? "bg-[#E8FAF6] text-[#179B7E]"
                     : "bg-red-100 text-red-700"
                 }`}
               >
@@ -173,7 +173,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
               disabled={isSubmitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition"
+              className="w-full bg-gradient-to-r from-[#383AB4] to-[#2D2E84] text-white py-3 rounded-xl font-semibold hover:shadow-lg transition"
             >
               {isSubmitting ? "Submitting..." : "Submit"}
             </motion.button>

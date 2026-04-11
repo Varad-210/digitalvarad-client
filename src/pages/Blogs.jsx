@@ -145,9 +145,9 @@ const Blogs = () => {
               📚 My Blogs
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-              Learn. <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Create.</span> Influence. <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Earn.</span>
+              Learn. <span className="bg-gradient-to-r from-[#20B597] to-[#34A7E0] bg-clip-text text-transparent">Create.</span> Influence. <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Earn.</span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-[#DEDEF0] max-w-2xl mx-auto">
               Practical guides, strategies, and real student stories to help you build income using digital skills and Bizgurukul affiliate marketing.
             </p>
           </motion.div>
@@ -192,7 +192,7 @@ const Blogs = () => {
                 {/* Card Body */}
                 <div className="p-6 flex flex-col flex-1">
                   {post.featured && (
-                    <span className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-[10px] font-black px-3 py-1 rounded-lg mb-3 w-fit shadow-md shadow-emerald-200/50 uppercase tracking-wider">
+                    <span className="inline-block bg-gradient-to-r from-[#20B597] to-[#34A7E0] text-white text-[10px] font-black px-3 py-1 rounded-lg mb-3 w-fit shadow-md shadow-emerald-200/50 uppercase tracking-wider">
                       ⭐ Featured
                     </span>
                   )}

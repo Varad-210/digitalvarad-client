@@ -185,7 +185,7 @@ const TopAIToolsContent = () => {
       </Section>
 
       <Section id="cta" number="17" title="🚀 — Join Biz-Creator Community">
-        <div className="bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0f172a] rounded-2xl p-8 text-white text-center shadow-lg">
+        <div className="bg-gradient-to-br from-[#2D2E84] via-[#383AB4] to-[#1A1B5C] rounded-2xl p-8 text-white text-center shadow-lg">
           <h3 className="text-2xl font-bold mb-4">Want to learn AI tools for business?</h3>
           <p className="mb-6 opacity-90 text-lg">Join Biz-Creator Community:</p>
           <ul className="text-left max-w-sm mx-auto space-y-3 mb-8">

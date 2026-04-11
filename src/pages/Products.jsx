@@ -368,7 +368,7 @@ const Products = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 bg-clip-text text-transparent">Premium</span> Courses
+            Our <span className="bg-gradient-to-r from-[#20B597] to-[#34A7E0] bg-clip-text text-transparent">Premium</span> Courses
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Transform your career with industry-leading courses designed by experts. 
@@ -399,7 +399,7 @@ const Products = () => {
                   </span>
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className="bg-secondary-500 text-white px-2 py-1 rounded text-xs font-bold">
+                  <span className="bg-[#20B597] text-white px-2 py-1 rounded text-xs font-bold">
                     50% OFF
                   </span>
                 </div>
@@ -441,7 +441,7 @@ const Products = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex-1 bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                    className="flex-1 bg-gradient-to-r from-[#20B597] to-[#34A7E0] text-white text-center py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     Buy Now
                   </motion.a>
@@ -557,7 +557,7 @@ const Products = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex-1 bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 text-white text-center py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300"
+                    className="flex-1 bg-gradient-to-r from-[#20B597] to-[#34A7E0] text-white text-center py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300"
                   >
                     Enroll Now - {selectedCourse.price}
                   </motion.a>

@@ -278,7 +278,7 @@ const BlogPost = () => {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center text-white relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <Link to="/blog" className="inline-flex items-center gap-1 text-blue-100 hover:text-white text-sm mb-6 transition-colors">
+            <Link to="/blog" className="inline-flex items-center gap-1 text-[#DEDEF0] hover:text-white text-sm mb-6 transition-colors">
               ← Back to Blog
             </Link>
             <span className="block bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-1 rounded-full mb-4 w-fit mx-auto uppercase tracking-widest border border-white/30">
@@ -287,8 +287,8 @@ const BlogPost = () => {
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-3">
               {post.title}
             </h1>
-            <p className="text-blue-100 text-xl mb-6">{post.subtitle}</p>
-            <div className="flex items-center justify-center gap-4 text-blue-200 text-sm">
+            <p className="text-[#DEDEF0] text-xl mb-6">{post.subtitle}</p>
+            <div className="flex items-center justify-center gap-4 text-[#BCBEE6] text-sm">
               <span>✍️ {post.author}</span>
               <span>·</span>
               <span>📅 {post.date}</span>
