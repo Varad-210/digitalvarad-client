@@ -98,146 +98,151 @@ const Blogs = () => {
         </div>
       </section>
 
-      <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 -mt-16">
+      {/* Filter Section */}
+      <div className="bg-[#F8F9FE] pt-6 pb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* ── Category filter pills ── */}
-        <div className="relative z-30 flex items-center gap-3 mb-10 overflow-x-auto whitespace-nowrap scrollbar-hide">
+          {/* ── Category filter pills ── */}
+          <div className="flex items-center gap-3 overflow-x-auto whitespace-nowrap scrollbar-hide">
 
-          {allCategories.map((cat) => {
-            const isActive = activeCategory === cat;
-            const colors = categoryColors[cat];
+            {allCategories.map((cat) => {
+              const isActive = activeCategory === cat;
+              const colors = categoryColors[cat];
 
-            return (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 border whitespace-nowrap ${isActive
-                    ? cat === 'All'
-                      ? 'bg-gray-900 text-white border-gray-900 shadow-md'
-                      : `${colors.bg} ${colors.text} ${colors.border} shadow-sm`
-                    : 'bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:text-gray-700'
-                  }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
-
-        </div>
-
-        {filtered.length === 0 && (
-          <div className="text-center py-20 text-gray-400">No posts in this category yet.</div>
-        )}
-
-        {/* ── Featured post (first card, full width) ── */}
-        {featured && (
-          <motion.div
-            key={featured.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8"
-          >
-            <Link to={`/blog/${featured.id}`} className="group block bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-indigo-100/50 hover:border-indigo-200 transition-all duration-300 overflow-hidden">
-              <div className="flex flex-col md:flex-row">
-                {/* Left colour slab */}
-                <div className="md:w-56 lg:w-72 flex-shrink-0 flex items-center justify-center p-10 md:p-0"
-                  style={{ background: 'linear-gradient(135deg, #EEF1FF, #F0FDF9)' }}
-                >
-                  <motion.span className="text-7xl md:text-8xl block group-hover:scale-110 transition-transform duration-500">
-                    {featured.emoji}
-                  </motion.span>
-                </div>
-                {/* Content */}
-                <div className="flex-1 p-7 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4 flex-wrap">
-                    {(() => {
-                      const c = categoryColors[featured.category] || {}; return (
-                        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${c.bg} ${c.text}`}>
-                          {featured.category}
-                        </span>
-                      );
-                    })()}
-                    <span className="text-xs text-gray-400 font-medium">{featured.readTime}</span>
-                    <span className="text-xs text-gray-300">·</span>
-                    <span className="text-xs text-gray-400">{featured.date}</span>
-                    <span className="ml-auto text-[10px] font-black uppercase tracking-widest text-indigo-400 bg-indigo-50 px-2 py-1 rounded-lg">Featured</span>
-                  </div>
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-gray-900 leading-tight mb-3 group-hover:text-indigo-700 transition-colors">
-                    {featured.title}
-                  </h2>
-                  <p className="text-gray-500 leading-relaxed mb-5 line-clamp-2">{featured.excerpt}</p>
-                  <div className="flex items-center gap-2 text-indigo-600 font-semibold text-sm group-hover:gap-3 transition-all">
-                    Read article
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-        )}
-
-        {/* ── Grid of remaining posts ── */}
-        {rest.length > 0 && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rest.map((post, i) => {
-              const c = categoryColors[post.category] || { bg: 'bg-indigo-50', text: 'text-indigo-600', border: 'border-indigo-200' };
               return (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.07, duration: 0.45 }}
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 border ${isActive
+                      ? cat === "All"
+                        ? "bg-gray-900 text-white border-gray-900 shadow-md"
+                        : `${colors.bg} ${colors.text} ${colors.border} shadow-sm`
+                      : "bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:text-gray-700"
+                    }`}
                 >
-                  <Link
-                    to={`/blog/${post.id}`}
-                    className="group flex flex-col bg-white rounded-2xl border border-gray-100 hover:border-indigo-200 transition-all duration-300 overflow-hidden h-full relative"
-                    style={{
-                      boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.boxShadow = '0 8px 30px rgba(99, 102, 241, 0.12)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
-                    }}
-                  >
-                    {/* Emoji area with gradient background */}
-                    <div className="px-6 pt-6 pb-4 flex items-start justify-between" style={{ background: 'linear-gradient(135deg, #FAFBFF 0%, #F0F4FF 100%)' }}>
-                      <span className="text-4xl group-hover:scale-110 transition-transform duration-300 origin-left">{post.emoji}</span>
-                      <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-lg ${c.bg} ${c.text}`}>
-                        {post.category.split(' ')[0]}
-                      </span>
-                    </div>
-
-                    {/* Text content */}
-                    <div className="p-6 pt-4 flex flex-col flex-1">
-                      <h3 className="font-bold text-gray-900 text-lg leading-tight mb-3 line-clamp-2 group-hover:text-indigo-600 transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 mb-4 flex-1">{post.excerpt}</p>
-
-                      <div className="flex items-center justify-between mt-auto pt-3">
-                        <div className="flex items-center gap-1.5 text-xs text-gray-400 font-medium">
-                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                          {post.readTime}
-                        </div>
-                        <span className="text-indigo-600 text-sm font-semibold flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-                          Read
-                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
+                  {cat}
+                </button>
               );
             })}
+
           </div>
-        )}
+
+        </div>
       </div>
+
+      {filtered.length === 0 && (
+        <div className="text-center py-20 text-gray-400">No posts in this category yet.</div>
+      )}
+
+      {/* ── Featured post (first card, full width) ── */}
+      {featured && (
+        <motion.div
+          key={featured.id}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8"
+        >
+          <Link to={`/blog/${featured.id}`} className="group block bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-indigo-100/50 hover:border-indigo-200 transition-all duration-300 overflow-hidden">
+            <div className="flex flex-col md:flex-row">
+              {/* Left colour slab */}
+              <div className="md:w-56 lg:w-72 flex-shrink-0 flex items-center justify-center p-10 md:p-0"
+                style={{ background: 'linear-gradient(135deg, #EEF1FF, #F0FDF9)' }}
+              >
+                <motion.span className="text-7xl md:text-8xl block group-hover:scale-110 transition-transform duration-500">
+                  {featured.emoji}
+                </motion.span>
+              </div>
+              {/* Content */}
+              <div className="flex-1 p-7 md:p-10 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-4 flex-wrap">
+                  {(() => {
+                    const c = categoryColors[featured.category] || {}; return (
+                      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${c.bg} ${c.text}`}>
+                        {featured.category}
+                      </span>
+                    );
+                  })()}
+                  <span className="text-xs text-gray-400 font-medium">{featured.readTime}</span>
+                  <span className="text-xs text-gray-300">·</span>
+                  <span className="text-xs text-gray-400">{featured.date}</span>
+                  <span className="ml-auto text-[10px] font-black uppercase tracking-widest text-indigo-400 bg-indigo-50 px-2 py-1 rounded-lg">Featured</span>
+                </div>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-gray-900 leading-tight mb-3 group-hover:text-indigo-700 transition-colors">
+                  {featured.title}
+                </h2>
+                <p className="text-gray-500 leading-relaxed mb-5 line-clamp-2">{featured.excerpt}</p>
+                <div className="flex items-center gap-2 text-indigo-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                  Read article
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </motion.div>
+      )}
+
+      {/* ── Grid of remaining posts ── */}
+      {rest.length > 0 && (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {rest.map((post, i) => {
+            const c = categoryColors[post.category] || { bg: 'bg-indigo-50', text: 'text-indigo-600', border: 'border-indigo-200' };
+            return (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.07, duration: 0.45 }}
+              >
+                <Link
+                  to={`/blog/${post.id}`}
+                  className="group flex flex-col bg-white rounded-2xl border border-gray-100 hover:border-indigo-200 transition-all duration-300 overflow-hidden h-full relative"
+                  style={{
+                    boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(99, 102, 241, 0.12)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+                  }}
+                >
+                  {/* Emoji area with gradient background */}
+                  <div className="px-6 pt-6 pb-4 flex items-start justify-between" style={{ background: 'linear-gradient(135deg, #FAFBFF 0%, #F0F4FF 100%)' }}>
+                    <span className="text-4xl group-hover:scale-110 transition-transform duration-300 origin-left">{post.emoji}</span>
+                    <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-lg ${c.bg} ${c.text}`}>
+                      {post.category.split(' ')[0]}
+                    </span>
+                  </div>
+
+                  {/* Text content */}
+                  <div className="p-6 pt-4 flex flex-col flex-1">
+                    <h3 className="font-bold text-gray-900 text-lg leading-tight mb-3 line-clamp-2 group-hover:text-indigo-600 transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 mb-4 flex-1">{post.excerpt}</p>
+
+                    <div className="flex items-center justify-between mt-auto pt-3">
+                      <div className="flex items-center gap-1.5 text-xs text-gray-400 font-medium">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        {post.readTime}
+                      </div>
+                      <span className="text-indigo-600 text-sm font-semibold flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                        Read
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </div>
+      )}
     </div>
+   
   );
 };
 
