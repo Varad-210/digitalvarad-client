@@ -16,7 +16,7 @@ const EscapeMatrixContent = () => {
         <p>Most students never question this path. Because since childhood, we were told this is the <strong>safe and secure path</strong>.</p>
         <p>But what if this path is not freedom… What if it's actually a <strong>trap</strong>?</p>
         
-        <div className="bg-primary-50 rounded-xl p-5 border border-primary-200 my-4">
+        <div className="bg-indigo-50/60 rounded-xl p-5 border border-indigo-100 my-4">
           <p className="text-gray-700 mb-3">Today, the world is changing fast. Students are earning using just their mobile phones. They are building personal brands, learning digital skills, and creating online income streams.</p>
         </div>
 
@@ -29,7 +29,7 @@ const EscapeMatrixContent = () => {
             'How to escape and build financial freedom',
           ].map(item => (
             <li key={item} className="flex items-center gap-2">
-              <span className="text-primary-500 font-bold">✔</span>
+              <span className="text-indigo-600 font-bold">✔</span>
               <span>{item}</span>
             </li>
           ))}
@@ -40,7 +40,7 @@ const EscapeMatrixContent = () => {
       <Section id="what-is-matrix" number="2" title="What is the Matrix? 🔍">
         <p>The Matrix is not just a movie. It's a system that programs your life from childhood.</p>
         <p>You're told:</p>
-        <p className="font-bold text-gray-900 text-lg text-center bg-primary-50 rounded-lg p-4 border border-primary-200">
+        <p className="font-bold text-gray-900 text-lg text-center bg-indigo-50/60 rounded-lg p-4 border border-indigo-100">
           School → College → Job → Loan → Retirement
         </p>
         <p>This becomes your entire life path.</p>
@@ -49,7 +49,7 @@ const EscapeMatrixContent = () => {
         <p>The system teaches you:</p>
         
         <div className="grid md:grid-cols-2 gap-4 my-4">
-          <div className="bg-[#E8FAF6] rounded-xl p-4 border border-[#C5F1E8]">
+          <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
             <p className="font-bold text-secondary-700 mb-2">✔ What the System Teaches:</p>
             <ul className="space-y-1 text-sm text-gray-700">
               <li>• How to memorize</li>
@@ -90,7 +90,7 @@ const EscapeMatrixContent = () => {
           ['📊 Marks', 'Measuring performance on paper, not real-world ability'],
           ['📚 Theory', 'Teaching concepts without application'],
         ].map(([title, desc]) => (
-          <div key={title} className="bg-primary-50 rounded-xl p-4 border border-primary-100 mb-3">
+          <div key={title} className="bg-indigo-50/60 rounded-xl p-4 border border-primary-100 mb-3">
             <p className="font-bold text-gray-900 mb-1">{title}</p>
             <p className="text-gray-600 text-sm">{desc}</p>
           </div>
@@ -115,8 +115,8 @@ const EscapeMatrixContent = () => {
         <p className="mt-4">Students spend 15–20 years studying but still don't know how to earn money independently.</p>
         <p>After graduation, many students feel confused. They have degrees but lack practical skills. This leads to job dependency and financial stress.</p>
         
-        <div className="bg-primary-50 rounded-xl p-5 border border-primary-200 my-4">
-          <p className="font-bold text-primary-600 mb-2">💡 The Solution</p>
+        <div className="bg-indigo-50/60 rounded-xl p-5 border border-indigo-100 my-4">
+          <p className="font-bold text-indigo-700 mb-2">💡 The Solution</p>
           <p className="text-gray-700 text-sm">Education is important, but relying only on degrees is not enough today. The best approach is to combine education with high-income skills. When you learn skills alongside your studies, you increase your opportunities and create financial independence early.</p>
         </div>
       </Section>
@@ -163,7 +163,7 @@ const EscapeMatrixContent = () => {
           <div className="border-l-4 border-primary-400 pl-4 py-2">
             <p className="font-bold text-gray-900 text-lg mb-2">Truth 5 — Your Phone is Your Biggest Opportunity 📱</p>
             <p className="text-gray-700 mb-2">Most students scroll Instagram daily. But others use the same phone to:</p>
-            <div className="bg-[#E8FAF6] rounded-lg p-3 border border-[#C5F1E8] mt-2">
+            <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-100 mt-2">
               <ul className="space-y-1">
                 {[
                   'Learn skills',
@@ -235,7 +235,7 @@ const EscapeMatrixContent = () => {
         <p>Instead of scrolling Instagram…</p>
         <p>You can:</p>
         
-        <div className="bg-primary-50 rounded-xl p-5 border border-primary-200 my-4">
+        <div className="bg-indigo-50/60 rounded-xl p-5 border border-indigo-100 my-4">
           <ul className="space-y-2">
             {[
               'Learn affiliate marketing basics (15 minutes)',
@@ -243,7 +243,7 @@ const EscapeMatrixContent = () => {
               'Build audience by engaging with others (10 minutes)',
             ].map(item => (
               <li key={item} className="flex items-center gap-2 text-gray-700">
-                <span className="text-primary-500 font-bold">✔</span>
+                <span className="text-indigo-600 font-bold">✔</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -253,7 +253,7 @@ const EscapeMatrixContent = () => {
         <p className="font-bold text-gray-900 text-lg">Small steps lead to big results.</p>
         <p>Many students start like this and gradually build their income.</p>
 
-        <div className="bg-primary-50 rounded-xl p-5 border border-primary-200 mt-4">
+        <div className="bg-indigo-50/60 rounded-xl p-5 border border-indigo-100 mt-4">
           <p className="font-semibold text-gray-900 mb-3">Real Timeline:</p>
           <div className="space-y-2 text-sm text-gray-700">
             <p>📅 <strong>Week 1-2:</strong> Learn basics, set up profile</p>
@@ -276,8 +276,8 @@ const EscapeMatrixContent = () => {
             'Question the default path',
             'Your time is your biggest asset',
           ].map(item => (
-            <div key={item} className="flex items-center gap-3 bg-primary-50 rounded-lg p-3 border border-primary-100">
-              <span className="text-primary-500 text-xl">✔</span>
+            <div key={item} className="flex items-center gap-3 bg-indigo-50/60 rounded-lg p-3 border border-primary-100">
+              <span className="text-indigo-600 text-xl">✔</span>
               <span className="text-gray-700 text-sm font-medium">{item}</span>
             </div>
           ))}
@@ -311,7 +311,7 @@ const EscapeMatrixContent = () => {
           </ul>
         </div>
 
-        <div className="bg-primary-50 rounded-xl p-5 border border-primary-200 mb-6">
+        <div className="bg-indigo-50/60 rounded-xl p-5 border border-indigo-100 mb-6">
           <p className="text-gray-700 mb-4">
             Bizgurukul provides <strong>live training sessions</strong>, and whenever you get stuck, additional help and guidance are available to support your journey.
           </p>
@@ -323,7 +323,7 @@ const EscapeMatrixContent = () => {
             href="https://wa.me/919049671938?text=Hi%20Varad,%20I%20read%20your%20blog%20on%20Escape%20the%20Matrix%20and%20want%20to%20know%20more%20about%20breaking%20free%20and%20building%20financial%20freedom."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#E8FAF6]0 hover:bg-[#179B7E] text-white font-bold px-8 py-4 rounded-xl text-lg shadow-lg transition duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg shadow-lg transition duration-300 hover:scale-105"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>

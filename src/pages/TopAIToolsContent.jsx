@@ -163,11 +163,11 @@ const TopAIToolsContent = () => {
         <p className="font-semibold mb-2">Top 10 Recommended:</p>
         <ul className="flex flex-wrap gap-2 mb-4">
           {['ChatGPT', 'Canva AI', 'Pictory', 'Gamma AI', 'Notion AI', 'Grammarly', 'Midjourney', 'ElevenLabs', 'Perplexity AI', 'Descript'].map(tool => (
-            <li key={tool} className="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">✔ {tool}</li>
+            <li key={tool} className="bg-indigo-50/60 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">✔ {tool}</li>
           ))}
         </ul>
         <p className="font-semibold mb-2 mt-4">These tools help build:</p>
-        <ul className="list-none space-y-1 mb-4 text-primary-600 font-medium">
+        <ul className="list-none space-y-1 mb-4 text-indigo-700 font-medium">
           <li>✔ Personal brand</li>
           <li>✔ Affiliate marketing</li>
           <li>✔ Online business</li>
@@ -185,7 +185,7 @@ const TopAIToolsContent = () => {
       </Section>
 
       <Section id="cta" number="17" title="🚀 — Join Biz-Creator Community">
-        <div className="bg-gradient-to-br from-[#2D2E84] via-[#383AB4] to-[#1A1B5C] rounded-2xl p-8 text-white text-center shadow-lg">
+        <div className="bg-gradient-to-br from-[#EEF1FF] to-[#F0FDF9] rounded-2xl p-8 text-white text-center shadow-lg">
           <h3 className="text-2xl font-bold mb-4">Want to learn AI tools for business?</h3>
           <p className="mb-6 opacity-90 text-lg">Join Biz-Creator Community:</p>
           <ul className="text-left max-w-sm mx-auto space-y-3 mb-8">
@@ -210,7 +210,7 @@ const TopAIToolsContent = () => {
               Live training by Bizgurukul
             </li>
           </ul>
-          <a href="https://wa.me/919049671938?text=Hi%20Varad,%20I%20want%20to%20learn%20how%20to%20build%20a%20business%20using%20AI%20tools!" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-primary-600 font-bold py-3 px-8 rounded-xl shadow-md hover:bg-gray-50 transition-colors">
+          <a href="https://wa.me/919049671938?text=Hi%20Varad,%20I%20want%20to%20learn%20how%20to%20build%20a%20business%20using%20AI%20tools!" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-indigo-700 font-bold py-3 px-8 rounded-xl shadow-md hover:bg-gray-50 transition-colors">
             Start building your AI-powered business today 🚀
           </a>
         </div>
