@@ -239,7 +239,7 @@ const BlogPost = () => {
           {/* Floating Gradient Orbs */}
           <div className="absolute top-10 left-10 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          
+
           {/* Floating Emojis */}
           <motion.div
             animate={{ y: [0, -15, 0], rotate: [0, 8, 0] }}
@@ -289,7 +289,7 @@ const BlogPost = () => {
         {/* Bottom Wave */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249, 250, 251)"/>
+            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249, 250, 251)" />
           </svg>
         </div>
       </section>
@@ -304,11 +304,10 @@ const BlogPost = () => {
                   <a
                     key={item.id}
                     href={`#${item.id}`}
-                    className={`block text-sm py-1.5 px-3 rounded-lg transition-all duration-200 ${
-                      activeSection === item.id
+                    className={`block text-sm py-1.5 px-3 rounded-lg transition-all duration-200 ${activeSection === item.id
                         ? 'bg-primary-500 text-white font-semibold'
                         : 'text-gray-600 hover:bg-primary-50 hover:text-primary-600'
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </a>
@@ -325,8 +324,8 @@ const BlogPost = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Explore More Topics</h3>
               <div className="grid sm:grid-cols-2 gap-6">
                 {otherPosts.map((otherPost) => (
-                  <Link 
-                    key={otherPost.id} 
+                  <Link
+                    key={otherPost.id}
                     to={`/blog/${otherPost.id}`}
                     className="flex flex-col bg-gray-50 rounded-xl p-5 border border-gray-100 hover:shadow-md hover:border-primary-200 transition duration-300 group"
                   >

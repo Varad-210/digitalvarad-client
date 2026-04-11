@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -16,6 +16,17 @@ function App() {
 
   const openContactPopup = () => setIsContactOpen(true);
   const closeContactPopup = () => setIsContactOpen(false);
+
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+    };
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
 
   return (
     // ⚠️ React Router v7 will change relative splat route behavior.
