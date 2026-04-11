@@ -253,5 +253,8 @@ const Home = ({ openContactPopup }) => {
           </motion.div>
         </div>
       </section>
+    </>
+  );
+};
 
 export default Home;
