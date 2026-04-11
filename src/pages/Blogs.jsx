@@ -14,11 +14,11 @@ export const blogPosts = [
 
 const categoryColors = {
   'Content Creation': { bg: 'bg-violet-50', text: 'text-violet-600', border: 'border-violet-200', accent: '#7C3AED' },
-  'AI Tools & Tech':  { bg: 'bg-blue-50',   text: 'text-blue-600',   border: 'border-blue-200',   accent: '#2563EB' },
+  'AI Tools & Tech': { bg: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-200', accent: '#2563EB' },
   'Affiliate Marketing': { bg: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-200', accent: '#EA580C' },
   'Mindset & Growth': { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200', accent: '#059669' },
-  'Skills & Learning':{ bg: 'bg-amber-50',   text: 'text-amber-600',   border: 'border-amber-200',   accent: '#D97706' },
-  'Sales & Marketing':{ bg: 'bg-rose-50',    text: 'text-rose-600',    border: 'border-rose-200',    accent: '#E11D48' },
+  'Skills & Learning': { bg: 'bg-amber-50', text: 'text-amber-600', border: 'border-amber-200', accent: '#D97706' },
+  'Sales & Marketing': { bg: 'bg-rose-50', text: 'text-rose-600', border: 'border-rose-200', accent: '#E11D48' },
 };
 
 const allCategories = ['All', ...Object.keys(categoryColors)];
@@ -44,7 +44,7 @@ const Blogs = () => {
           <div className="absolute top-10 left-5 w-64 h-64 bg-[#7075D0]/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 right-5 w-80 h-80 bg-[#383AB4]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#34A7E0]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-          
+
           {/* Floating Icons - Hidden on mobile, visible on desktop */}
           <motion.div
             animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
@@ -93,7 +93,7 @@ const Blogs = () => {
 
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F8F9FE"/>
+            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F8F9FE" />
           </svg>
         </div>
       </section>
@@ -101,21 +101,33 @@ const Blogs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
 
         {/* ── Category filter pills ── */}
-        <div className="flex items-center gap-2 mb-10 -mt-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <div className="flex items-center gap-3 mb-10 -mt-8 overflow-x-auto whitespace-nowrap scrollbar-hide pb-2">
+
           {allCategories.map((cat) => {
             const isActive = activeCategory === cat;
             const colors = categoryColors[cat];
+
             return (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-4 rounded-full text-sm font-semibold transition-all duration-200 border whitespace-nowrap ${
-                  isActive
-                    ? cat === 'All'
-                      ? 'bg-gray-900 text-white border-gray-900 shadow-md'
+                className={`
+          flex-shrink-0
+          px-5 py-2.5
+          rounded-full
+          text-sm
+          font-semibold
+          transition-all
+          duration-200
+          border
+          min-h-[42px]
+          ${isActive
+                    ? cat === "All"
+                      ? "bg-gray-900 text-white border-gray-900 shadow-md"
                       : `${colors.bg} ${colors.text} ${colors.border} shadow-sm`
-                    : 'bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:text-gray-700'
-                }`}
+                    : "bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:text-gray-700"
+                  }
+        `}
               >
                 {cat}
               </button>
@@ -149,11 +161,13 @@ const Blogs = () => {
                 {/* Content */}
                 <div className="flex-1 p-7 md:p-10 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4 flex-wrap">
-                    {(() => { const c = categoryColors[featured.category] || {}; return (
-                      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${c.bg} ${c.text}`}>
-                        {featured.category}
-                      </span>
-                    );})()}
+                    {(() => {
+                      const c = categoryColors[featured.category] || {}; return (
+                        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${c.bg} ${c.text}`}>
+                          {featured.category}
+                        </span>
+                      );
+                    })()}
                     <span className="text-xs text-gray-400 font-medium">{featured.readTime}</span>
                     <span className="text-xs text-gray-300">·</span>
                     <span className="text-xs text-gray-400">{featured.date}</span>
