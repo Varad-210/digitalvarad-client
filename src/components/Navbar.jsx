@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ openContactPopup }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +19,8 @@ const Navbar = ({ openContactPopup }) => {
       path: '/products',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+          <path d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
         </svg>
       )
     },
@@ -54,173 +52,137 @@ const Navbar = ({ openContactPopup }) => {
   };
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center mb-1">
-            <div className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 p-2 rounded-lg mr-3 shadow-lg">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">VaradBuilds</h3>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">
-              Home
-            </Link>
-            <Link to="/products" className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">
-              Courses
-            </Link>
-            <Link to="/blog" className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">
-              Blog
-            </Link>
-            <button
-              onClick={openContactPopup}
-              className="relative px-6 py-2 rounded-lg font-semibold overflow-hidden group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-600 transition-all duration-300 group-hover:scale-110"></div>
-              <span className="relative text-white">Contact Us</span>
-            </button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative w-10 h-10 text-gray-700 hover:text-blue-600 focus:outline-none"
-            >
-              <span className="sr-only">Open menu</span>
-              <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <span
-                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
-                    isMenuOpen ? 'rotate-45' : '-translate-y-1.5'
-                  }`}
-                />
-                <span
-                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
-                    isMenuOpen ? 'opacity-0' : 'opacity-100'
-                  }`}
-                />
-                <span
-                  className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
-                    isMenuOpen ? '-rotate-45' : 'translate-y-1.5'
-                  }`}
-                />
+    <>
+      <nav style={{ background: 'rgba(42, 42, 114, 0.8)', backdropFilter: 'blur(10px)' }} className="shadow-lg sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <div style={{ background: 'var(--accent-gradient)' }} className="p-2 rounded-lg mr-3 shadow-lg">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-            </button>
+              <h3 className="text-2xl font-bold gradient-text">VaradBuilds</h3>
+            </Link>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/" className="text-white hover:text-accent-teal transition duration-300 font-medium">
+                Home
+              </Link>
+              <Link to="/products" className="text-white hover:text-accent-teal transition duration-300 font-medium">
+                Courses
+              </Link>
+              <Link to="/blog" className="text-white hover:text-accent-teal transition duration-300 font-medium">
+                Blog
+              </Link>
+              <button
+                onClick={openContactPopup}
+                className="btn-primary"
+              >
+                Contact Us
+              </button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="relative w-10 h-10 text-white hover:text-accent-teal focus:outline-none"
+              >
+                <span className="sr-only">Open menu</span>
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <span className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ${isMenuOpen ? 'rotate-45' : '-translate-y-1.5'}`} />
+                  <span className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
+                  <span className={`block absolute h-0.5 w-6 bg-current transform transition duration-300 ${isMenuOpen ? '-rotate-45' : 'translate-y-1.5'}`} />
+                </div>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
-              onClick={() => setIsMenuOpen(false)}
-            />
+      {/* Mobile Menu Overlay - Closes when clicking anywhere */}
+      {isMenuOpen && (
+        <>
+          {/* Full screen backdrop - clicking anywhere closes menu */}
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          />
 
-            {/* Mobile Menu */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="fixed inset-x-0 top-16 z-50 md:hidden"
-            >
-              <div className="mx-4 mt-2 rounded-2xl overflow-hidden shadow-2xl">
-                {/* Gradient Background with Pattern */}
-                <div className="relative bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] via-[#4338ca] to-[#0f172a] p-6">
-                  {/* Subtle Pattern Overlay */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 right-0 w-40 h-40 bg-cyan-400 rounded-full blur-3xl"></div>
-                  </div>
-
-                  {/* Menu Items */}
-                  <div className="relative space-y-3">
-                    {menuItems.map((item, index) => (
-                      <motion.div
-                        key={item.name}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1, duration: 0.3 }}
-                      >
-                        {item.path ? (
-                          <Link
-                            to={item.path}
-                            onClick={() => handleMenuItemClick(item)}
-                            className="group flex items-center space-x-4 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95"
+          {/* Mobile Menu */}
+          <div className="fixed inset-x-0 top-16 z-50 md:hidden">
+            <div className="mx-4 mt-2 rounded-2xl overflow-hidden shadow-2xl" style={{ background: 'var(--primary-gradient)' }}>
+              <div className="p-6">
+                {/* Menu Items */}
+                <div className="space-y-3">
+                  {menuItems.map((item) => (
+                    <div key={item.name}>
+                      {item.path ? (
+                        <Link
+                          to={item.path}
+                          onClick={() => handleMenuItemClick(item)}
+                          className="flex items-center space-x-4 p-4 rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-300"
+                        >
+                          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg text-white" style={{ background: 'var(--accent-gradient)' }}>
+                            {item.icon}
+                          </div>
+                          <span className="text-lg font-semibold text-white">
+                            {item.name}
+                          </span>
+                          <svg
+                            className="ml-auto w-5 h-5 text-white/60"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
                           >
-                            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-lg group-hover:shadow-emerald-500/50 transition-shadow duration-300">
-                              {item.icon}
-                            </div>
-                            <span className="text-lg font-semibold text-white group-hover:text-emerald-300 transition-colors duration-300">
-                              {item.name}
-                            </span>
-                            <svg
-                              className="ml-auto w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all duration-300"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Link>
-                        ) : (
-                          <button
-                            onClick={() => handleMenuItemClick(item)}
-                            className="group w-full flex items-center space-x-4 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95"
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      ) : (
+                        <button
+                          onClick={() => handleMenuItemClick(item)}
+                          className="w-full flex items-center space-x-4 p-4 rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-300"
+                        >
+                          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg text-white" style={{ background: 'var(--accent-gradient)' }}>
+                            {item.icon}
+                          </div>
+                          <span className="text-lg font-semibold text-white">
+                            {item.name}
+                          </span>
+                          <svg
+                            className="ml-auto w-5 h-5 text-white/60"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
                           >
-                            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-lg group-hover:shadow-emerald-500/50 transition-shadow duration-300">
-                              {item.icon}
-                            </div>
-                            <span className="text-lg font-semibold text-white group-hover:text-emerald-300 transition-colors duration-300">
-                              {item.name}
-                            </span>
-                            <svg
-                              className="ml-auto w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all duration-300"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </button>
-                        )}
-                      </motion.div>
-                    ))}
-                  </div>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
 
-                  {/* Bottom Decoration */}
-                  <div className="mt-6 pt-4 border-t border-white/20">
-                    <p className="text-center text-white/60 text-sm">
-                      Build Your Digital Future 🚀
-                    </p>
-                  </div>
+                {/* Bottom Text */}
+                <div className="mt-6 pt-4 border-t border-white/20">
+                  <p className="text-center text-white/60 text-sm">
+                    Build Your Digital Future 🚀
+                  </p>
                 </div>
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </nav>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
