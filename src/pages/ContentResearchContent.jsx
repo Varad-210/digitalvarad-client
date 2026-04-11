@@ -348,7 +348,7 @@ const ContentResearchContent = () => {
       </Section>
 
       <Section id="cta" number="12" title="🚀 Join Biz-Creator Community">
-        <div className="bg-gradient-to-br from-primary-600 to-primary-900 rounded-[2rem] p-8 md:p-14 text-white text-center shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#1e3a8a] via-[#1e40af] to-[#0f172a] rounded-[2rem] p-8 md:p-14 text-white text-center shadow-2xl relative overflow-hidden">
           {/* Decorative shapes */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>

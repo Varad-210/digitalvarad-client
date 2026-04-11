@@ -300,9 +300,9 @@ const AffiliateGrowthContent = () => {
           <p className="font-bold text-primary-600 text-xl">Success depends on action.</p>
         </div>
 
-        <div className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-xl p-8 text-center my-6 shadow-xl shadow-emerald-200">
+        <div className="bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0f172a] text-white rounded-xl p-8 text-center my-6 shadow-xl shadow-blue-500/20">
           <p className="font-bold text-3xl mb-3">The decision is yours.</p>
-          <p className="text-emerald-50 text-lg">Will you continue the same way, or will you start the 6-month routine today?</p>
+          <p className="text-blue-50 text-lg">Will you continue the same way, or will you start the 6-month routine today?</p>
         </div>
       </Section>
 

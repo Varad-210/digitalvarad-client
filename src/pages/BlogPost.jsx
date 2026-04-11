@@ -86,7 +86,7 @@ export const Section = ({ id, number, title, children }) => (
     className="mb-14 scroll-mt-28"
   >
     <div className="flex items-center gap-3 mb-5">
-      <span className="flex-shrink-0 w-9 h-9 rounded-full bg-primary-500 text-white text-sm font-bold flex items-center justify-center shadow">
+      <span className="flex-shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-[#1e3a8a] to-[#4338ca] text-white text-sm font-black flex items-center justify-center shadow-lg shadow-blue-200">
         {number}
       </span>
       <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
@@ -345,15 +345,21 @@ const BlogPost = () => {
                   <Link
                     key={otherPost.id}
                     to={`/blog/${otherPost.id}`}
-                    className="flex flex-col bg-gray-50 rounded-xl p-5 border border-gray-100 hover:shadow-md hover:border-primary-200 transition duration-300 group"
+                    className="flex flex-col bg-gradient-to-br from-white to-blue-50/50 rounded-2xl p-6 border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 hover:border-primary-300 transition-all duration-300 group relative overflow-hidden"
                   >
-                    <span className="text-3xl mb-3">{otherPost.emoji}</span>
-                    <h4 className="font-bold text-gray-900 group-hover:text-primary-600 transition-colors mb-2 line-clamp-2">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl -mr-8 -mt-8"></div>
+                    <span className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 block w-fit">{otherPost.emoji}</span>
+                    <h4 className="font-bold text-gray-900 group-hover:text-primary-600 transition-colors mb-3 line-clamp-2 text-lg leading-tight">
                       {otherPost.title}
                     </h4>
-                    <p className="text-xs text-gray-500 font-medium tracking-wide uppercase mt-auto">
-                      {otherPost.category} · {otherPost.readTime}
-                    </p>
+                    <div className="mt-auto flex items-center gap-2">
+                      <span className="text-[10px] font-black text-primary-500 tracking-widest uppercase py-1 px-2.5 bg-primary-50 rounded-lg">
+                        {otherPost.category}
+                      </span>
+                      <span className="text-[10px] font-bold text-gray-400 uppercase">
+                        {otherPost.readTime}
+                      </span>
+                    </div>
                   </Link>
                 ))}
               </div>
