@@ -343,71 +343,82 @@ const BlogPost = () => {
         </section>
 
         {/* ── Content area ── */}
-        <section className="relative bg-gradient-to-br from-[#2D2E84] via-[#383AB4] to-[#1A1B5C] py-32 overflow-hidden">
+        <section className="relative bg-[#F8F9FE] py-16">
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
             <div className="flex gap-8 xl:gap-12 items-start">
 
               {/* ── TOC Sidebar ── */}
-              <aside className="hidden xl:flex flex-col w-64 flex-shrink-0" style={{ position: 'sticky', top: '88px', maxHeight: 'calc(100vh - 108px)' }}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col" style={{ maxHeight: 'calc(100vh - 108px)', overflow: 'hidden' }}>
+              <aside className="hidden xl:flex flex-col w-64 flex-shrink-0"
+                style={{ position: 'sticky', top: '88px', maxHeight: 'calc(100vh - 108px)' }}>
+
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col"
+                  style={{ maxHeight: 'calc(100vh - 108px)', overflow: 'hidden' }}>
+
                   <div className="px-5 py-4 border-b border-gray-50 flex-shrink-0">
                     <div className="flex items-center gap-2">
-                      <div className="w-1 h-5 rounded-full" style={{ background: 'linear-gradient(180deg, #6B8FF8, #20B597)' }}></div>
-                      <span className="text-xs font-black text-gray-700 uppercase tracking-[0.12em]">On This Page</span>
+                      <div
+                        className="w-1 h-5 rounded-full"
+                        style={{
+                          background:
+                            'linear-gradient(180deg, #6B8FF8, #20B597)'
+                        }}
+                      ></div>
+
+                      <span className="text-xs font-black text-gray-700 uppercase tracking-[0.12em]">
+                        On This Page
+                      </span>
                     </div>
                   </div>
 
-                  <nav ref={tocRef} className="overflow-y-auto flex-1 py-3 px-3" style={{ scrollbarWidth: 'thin', scrollbarColor: '#E5E7EB transparent' }}>
+                  <nav
+                    ref={tocRef}
+                    className="overflow-y-auto flex-1 py-3 px-3"
+                  >
                     {tocItems.map((item, i) => {
                       const isActive = activeSection === item.id;
                       return (
-                        <a key={item.id} href={`#${item.id}`} data-id={item.id}
-                          className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200 mb-0.5 ${isActive ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-gray-400 hover:text-gray-700 hover:bg-gray-50'}`}
+                        <a
+                          key={item.id}
+                          href={`#${item.id}`}
+                          data-id={item.id}
+                          className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200 mb-0.5 ${isActive
+                              ? "bg-indigo-50 text-indigo-700 font-semibold"
+                              : "text-gray-400 hover:text-gray-700 hover:bg-gray-50"
+                            }`}
                         >
-                          <span className={`flex-shrink-0 w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-black transition-all ${isActive ? 'bg-indigo-500 text-white' : 'bg-gray-100 text-gray-300 group-hover:bg-gray-200 group-hover:text-gray-500'}`}>{i + 1}</span>
-                          <span className="leading-snug flex-1">{item.label}</span>
-                          {isActive && <span className="w-1 h-4 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(180deg, #6B8FF8, #20B597)' }} />}
+                          <span
+                            className={`flex-shrink-0 w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-black ${isActive
+                                ? "bg-indigo-500 text-white"
+                                : "bg-gray-100 text-gray-300"
+                              }`}
+                          >
+                            {i + 1}
+                          </span>
+
+                          <span className="leading-snug flex-1">
+                            {item.label}
+                          </span>
                         </a>
                       );
                     })}
                   </nav>
-
-                  
                 </div>
               </aside>
 
               {/* ── Article ── */}
-              <motion.article initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="flex-1 min-w-0">
+              <motion.article
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex-1 min-w-0"
+              >
                 <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-10 lg:p-14">
                   {renderBlogContent(slug)}
                 </div>
 
-                {/* Related posts */}
-                <div className="mt-10">
-                  <div className="flex items-center gap-3 mb-6">
-                    <h3 className="text-xl font-bold text-gray-900">Continue Reading</h3>
-                    <div className="flex-1 h-px bg-gray-100"></div>
-                  </div>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {otherPosts.map((p, i) => {
-                      const c = categoryColors[p.category] || { bg: 'bg-indigo-50', text: 'text-indigo-600', dot: 'bg-indigo-400' };
-                      return (
-                        <motion.div key={p.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}>
-                          <Link to={`/blog/${p.id}`} className="group flex flex-col bg-white rounded-2xl p-5 border border-gray-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 h-full">
-                            <span className="text-3xl mb-3 block group-hover:scale-110 transition-transform duration-300 origin-left">{p.emoji}</span>
-                            <h4 className="font-bold text-gray-800 text-sm leading-snug mb-3 line-clamp-2 group-hover:text-indigo-700 transition-colors">{p.title}</h4>
-                            <div className="mt-auto flex items-center gap-2 flex-wrap">
-                              <span className={`text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-lg ${c.bg} ${c.text}`}>{p.category}</span>
-                              <span className="text-[10px] text-gray-400 font-medium">{p.readTime}</span>
-                            </div>
-                          </Link>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                </div>
               </motion.article>
+
             </div>
           </div>
 
