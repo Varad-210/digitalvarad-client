@@ -36,36 +36,66 @@ const Blogs = () => {
   return (
     <div className="min-h-screen" style={{ background: '#F8F9FE' }}>
 
-      {/* ── Hero ── */}
-      <section className="relative pt-16 pb-28 overflow-hidden"
-        style={{ background: 'linear-gradient(160deg, #EEF1FF 0%, #F3F8FF 55%, #F0FDF9 100%)' }}
-      >
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-30 pointer-events-none" style={{ background: 'radial-gradient(circle, #C7D2FE, transparent)' }} />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl opacity-25 pointer-events-none" style={{ background: 'radial-gradient(circle, #BBF7D0, transparent)' }} />
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 border border-indigo-100 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
-              Fresh Insights Weekly
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-5">
-              Learn.{' '}
-              <span className="relative">
-                <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #6B8FF8, #20B597)' }}>Create.</span>
-              </span>{' '}
-              Earn.
-            </h1>
-            <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Practical guides for students building financial freedom through digital skills, affiliate marketing, and personal branding.
-            </p>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-[#2D2E84] via-[#383AB4] to-[#1A1B5C] py-32 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Floating Gradient Orbs - Optimized positioning */}
+          <div className="absolute top-10 left-5 w-64 h-64 bg-[#7075D0]/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-5 w-80 h-80 bg-[#383AB4]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#34A7E0]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          
+          {/* Floating Icons - Hidden on mobile, visible on desktop */}
+          <motion.div
+            animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="hidden lg:block absolute top-24 right-16 text-white/8 text-5xl"
+          >
+            💼
+          </motion.div>
+          <motion.div
+            animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="hidden lg:block absolute bottom-24 left-16 text-white/8 text-5xl"
+          >
+            🚀
+          </motion.div>
+          <motion.div
+            animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="hidden xl:block absolute top-1/2 right-32 text-white/8 text-4xl"
+          >
+            💡
+          </motion.div>
+          <motion.div
+            animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+            className="hidden xl:block absolute top-1/3 left-32 text-white/8 text-4xl"
+          >
+            📈
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 56L48 49C96 42 192 28 288 21C384 14 480 14 576 18.7C672 23 768 32 864 35C960 38 1056 35 1152 30C1248 25 1344 18 1392 14L1440 11V56H0Z" fill="#F8F9FE" />
-          </svg>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-white/90 bg-white/10 border border-white/20 mb-6 backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+              Fresh Insights Weekly
+            </span>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-5">
+              Learn.{' '}
+              <span className="relative">
+                <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #6B8FF8, #20B597)' }}>Create.</span>
+              </span>{' '}Influence.
+              {' '}
+              <span className="relative">
+                <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #6B8FF8, #20B597)' }}>Earn.</span>
+              </span>{' '}
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+              Practical guides for students building financial freedom through digital skills, affiliate marketing, and personal branding.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -80,7 +110,7 @@ const Blogs = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 border ${
+                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 border whitespace-nowrap ${
                   isActive
                     ? cat === 'All'
                       ? 'bg-gray-900 text-white border-gray-900 shadow-md'

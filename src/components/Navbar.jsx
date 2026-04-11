@@ -34,7 +34,7 @@ const Navbar = ({ openContactPopup }) => {
                 whileHover={{ scale: 1.02 }}
                 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight"
               >
-                Bizgurukul
+                Varadbuilds
               </motion.span>
             </Link>
           </div>
