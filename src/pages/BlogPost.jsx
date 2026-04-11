@@ -141,8 +141,17 @@ const BlogPost = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => { entries.forEach((e) => { if (e.isIntersecting) setActiveSection(e.target.id); }); },
-      { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+      (entries) => { 
+        entries.forEach((e) => { 
+          if (e.isIntersecting && e.intersectionRatio > 0.3) {
+            setActiveSection(e.target.id);
+          }
+        }); 
+      },
+      { 
+        rootMargin: '-100px 0px -60% 0px', 
+        threshold: [0, 0.3, 0.5, 0.7, 1.0]
+      }
     );
     tocItems.forEach(({ id }) => { const el = document.getElementById(id); if (el) observer.observe(el); });
     return () => observer.disconnect();
@@ -151,7 +160,17 @@ const BlogPost = () => {
   useEffect(() => {
     if (!tocRef.current) return;
     const activeEl = tocRef.current.querySelector(`[data-id="${activeSection}"]`);
-    if (activeEl) activeEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    if (activeEl) {
+      // Only scroll the TOC container, not the whole page
+      const container = tocRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const elementRect = activeEl.getBoundingClientRect();
+      
+      // Check if element is outside the visible area of the container
+      if (elementRect.top < containerRect.top || elementRect.bottom > containerRect.bottom) {
+        activeEl.scrollIntoView({ block: 'nearest', behavior: 'smooth', inline: 'nearest' });
+      }
+    }
   }, [activeSection]);
 
   return (
@@ -208,76 +227,122 @@ const BlogPost = () => {
         </section>
 
         {/* ── Content area ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="flex gap-8 xl:gap-12 items-start">
+        <section className="relative bg-gradient-to-br from-[#2D2E84] via-[#383AB4] to-[#1A1B5C] py-32 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Floating Gradient Orbs - Optimized positioning */}
+            <div className="absolute top-10 left-5 w-64 h-64 bg-[#7075D0]/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-5 w-80 h-80 bg-[#383AB4]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#34A7E0]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            
+            {/* Floating Icons - Hidden on mobile, visible on desktop */}
+            <motion.div
+              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden lg:block absolute top-24 right-16 text-white/8 text-5xl"
+            >
+              💼
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden lg:block absolute bottom-24 left-16 text-white/8 text-5xl"
+            >
+              🚀
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden xl:block absolute top-1/2 right-32 text-white/8 text-4xl"
+            >
+              💡
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden xl:block absolute top-1/3 left-32 text-white/8 text-4xl"
+            >
+              📈
+            </motion.div>
+          </div>
 
-            {/* ── TOC Sidebar ── */}
-            <aside className="hidden xl:flex flex-col w-64 flex-shrink-0" style={{ position: 'sticky', top: '88px', maxHeight: 'calc(100vh - 108px)' }}>
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col" style={{ maxHeight: 'calc(100vh - 108px)', overflow: 'hidden' }}>
-                <div className="px-5 py-4 border-b border-gray-50 flex-shrink-0">
-                  <div className="flex items-center gap-2">
-                    <div className="w-1 h-5 rounded-full" style={{ background: 'linear-gradient(180deg, #6B8FF8, #20B597)' }}></div>
-                    <span className="text-xs font-black text-gray-700 uppercase tracking-[0.12em]">On This Page</span>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+            <div className="flex gap-8 xl:gap-12 items-start">
+
+              {/* ── TOC Sidebar ── */}
+              <aside className="hidden xl:flex flex-col w-64 flex-shrink-0" style={{ position: 'sticky', top: '88px', maxHeight: 'calc(100vh - 108px)' }}>
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col" style={{ maxHeight: 'calc(100vh - 108px)', overflow: 'hidden' }}>
+                  <div className="px-5 py-4 border-b border-gray-50 flex-shrink-0">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-5 rounded-full" style={{ background: 'linear-gradient(180deg, #6B8FF8, #20B597)' }}></div>
+                      <span className="text-xs font-black text-gray-700 uppercase tracking-[0.12em]">On This Page</span>
+                    </div>
+                  </div>
+
+                  <nav ref={tocRef} className="overflow-y-auto flex-1 py-3 px-3" style={{ scrollbarWidth: 'thin', scrollbarColor: '#E5E7EB transparent' }}>
+                    {tocItems.map((item, i) => {
+                      const isActive = activeSection === item.id;
+                      return (
+                        <a key={item.id} href={`#${item.id}`} data-id={item.id}
+                          className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200 mb-0.5 ${isActive ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-gray-400 hover:text-gray-700 hover:bg-gray-50'}`}
+                        >
+                          <span className={`flex-shrink-0 w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-black transition-all ${isActive ? 'bg-indigo-500 text-white' : 'bg-gray-100 text-gray-300 group-hover:bg-gray-200 group-hover:text-gray-500'}`}>{i + 1}</span>
+                          <span className="leading-snug flex-1">{item.label}</span>
+                          {isActive && <span className="w-1 h-4 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(180deg, #6B8FF8, #20B597)' }} />}
+                        </a>
+                      );
+                    })}
+                  </nav>
+
+                  <div className="px-4 py-3 border-t border-gray-50 flex-shrink-0">
+                    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-xs font-semibold text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+                      Back to top
+                    </button>
                   </div>
                 </div>
+              </aside>
 
-                <nav ref={tocRef} className="overflow-y-auto flex-1 py-3 px-3" style={{ scrollbarWidth: 'thin', scrollbarColor: '#E5E7EB transparent' }}>
-                  {tocItems.map((item, i) => {
-                    const isActive = activeSection === item.id;
-                    return (
-                      <a key={item.id} href={`#${item.id}`} data-id={item.id}
-                        className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200 mb-0.5 ${isActive ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-gray-400 hover:text-gray-700 hover:bg-gray-50'}`}
-                      >
-                        <span className={`flex-shrink-0 w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-black transition-all ${isActive ? 'bg-indigo-500 text-white' : 'bg-gray-100 text-gray-300 group-hover:bg-gray-200 group-hover:text-gray-500'}`}>{i + 1}</span>
-                        <span className="leading-snug flex-1">{item.label}</span>
-                        {isActive && <span className="w-1 h-4 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(180deg, #6B8FF8, #20B597)' }} />}
-                      </a>
-                    );
-                  })}
-                </nav>
-
-                <div className="px-4 py-3 border-t border-gray-50 flex-shrink-0">
-                  <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-xs font-semibold text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all">
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
-                    Back to top
-                  </button>
+              {/* ── Article ── */}
+              <motion.article initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="flex-1 min-w-0">
+                <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-10 lg:p-14">
+                  {renderBlogContent(slug)}
                 </div>
-              </div>
-            </aside>
 
-            {/* ── Article ── */}
-            <motion.article initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="flex-1 min-w-0">
-              <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-10 lg:p-14">
-                {renderBlogContent(slug)}
-              </div>
-
-              {/* Related posts */}
-              <div className="mt-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <h3 className="text-xl font-bold text-gray-900">Continue Reading</h3>
-                  <div className="flex-1 h-px bg-gray-100"></div>
+                {/* Related posts */}
+                <div className="mt-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <h3 className="text-xl font-bold text-gray-900">Continue Reading</h3>
+                    <div className="flex-1 h-px bg-gray-100"></div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {otherPosts.map((p, i) => {
+                      const c = categoryColors[p.category] || { bg: 'bg-indigo-50', text: 'text-indigo-600', dot: 'bg-indigo-400' };
+                      return (
+                        <motion.div key={p.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}>
+                          <Link to={`/blog/${p.id}`} className="group flex flex-col bg-white rounded-2xl p-5 border border-gray-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 h-full">
+                            <span className="text-3xl mb-3 block group-hover:scale-110 transition-transform duration-300 origin-left">{p.emoji}</span>
+                            <h4 className="font-bold text-gray-800 text-sm leading-snug mb-3 line-clamp-2 group-hover:text-indigo-700 transition-colors">{p.title}</h4>
+                            <div className="mt-auto flex items-center gap-2 flex-wrap">
+                              <span className={`text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-lg ${c.bg} ${c.text}`}>{p.category}</span>
+                              <span className="text-[10px] text-gray-400 font-medium">{p.readTime}</span>
+                            </div>
+                          </Link>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {otherPosts.map((p, i) => {
-                    const c = categoryColors[p.category] || { bg: 'bg-indigo-50', text: 'text-indigo-600', dot: 'bg-indigo-400' };
-                    return (
-                      <motion.div key={p.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}>
-                        <Link to={`/blog/${p.id}`} className="group flex flex-col bg-white rounded-2xl p-5 border border-gray-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-50 transition-all duration-300 h-full">
-                          <span className="text-3xl mb-3 block group-hover:scale-110 transition-transform duration-300 origin-left">{p.emoji}</span>
-                          <h4 className="font-bold text-gray-800 text-sm leading-snug mb-3 line-clamp-2 group-hover:text-indigo-700 transition-colors">{p.title}</h4>
-                          <div className="mt-auto flex items-center gap-2 flex-wrap">
-                            <span className={`text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-lg ${c.bg} ${c.text}`}>{p.category}</span>
-                            <span className="text-[10px] text-gray-400 font-medium">{p.readTime}</span>
-                          </div>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            </motion.article>
+              </motion.article>
+            </div>
           </div>
-        </div>
+
+          <div className="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+              <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249,250,251)"/>
+            </svg>
+          </div>
+        </section>
       </div>
     </>
   );
