@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-
+import Link from 'next/link';
 const Home = () => {
 
   const successStories = [
@@ -207,7 +206,7 @@ const Home = () => {
             >
               {/* Primary Button - Explore Courses */}
               <Link
-                to="/products"
+                href="/products"
                 className="group relative px-8 py-4 rounded-xl text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/50"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 transition-all duration-300 group-hover:scale-110"></div>
@@ -233,7 +232,7 @@ const Home = () => {
 
               {/* Tertiary Button - Read Blog */}
               <Link
-                to="/blog"
+                href="/blog"
                 className="group relative px-8 py-4 rounded-xl text-lg font-semibold border-2 border-white/30 hover:border-white/50 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20"
               >
                 <span className="flex items-center gap-2 text-white">
@@ -537,7 +536,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               {/* Primary CTA */}
               <Link
-                to="/products"
+                href="/products"
                 className="group relative px-10 py-4 rounded-xl text-lg font-bold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/50"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 transition-all duration-300 group-hover:scale-110"></div>
