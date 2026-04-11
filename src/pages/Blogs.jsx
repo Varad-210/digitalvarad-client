@@ -83,23 +83,17 @@ const Blogs = () => {
               Fresh Insights Weekly
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-5">
-              Learn.{' '}
-              <span className="relative">
-                <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #6B8FF8, #20B597)' }}>Create.</span>
-              </span>{' '}Influence.
-              {' '}
-              <span className="relative">
-                <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #6B8FF8, #20B597)' }}>Earn.</span>
-              </span>{' '}
+              Learn. Create. Earn.
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
               Practical guides for students building financial freedom through digital skills, affiliate marketing, and personal branding.
             </p>
           </motion.div>
         </div>
+
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249,250,251)"/>
+            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F8F9FE"/>
           </svg>
         </div>
       </section>
@@ -107,7 +101,7 @@ const Blogs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
 
         {/* ── Category filter pills ── */}
-        <div className="flex items-center gap-2 flex-wrap mb-10 -mt-4">
+        <div className="flex items-center gap-2 mb-10 -mt-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
           {allCategories.map((cat) => {
             const isActive = activeCategory === cat;
             const colors = categoryColors[cat];

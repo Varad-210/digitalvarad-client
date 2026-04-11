@@ -181,6 +181,44 @@ const BlogPost = () => {
       <div className="min-h-screen" style={{ background: '#F8F9FE' }}>
 
         {/* ── Hero ── */}
+        <section className="relative bg-gradient-to-br from-[#2D2E84] via-[#383AB4] to-[#1A1B5C] py-32 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Floating Gradient Orbs - Optimized positioning */}
+            <div className="absolute top-10 left-5 w-64 h-64 bg-[#7075D0]/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-5 w-80 h-80 bg-[#383AB4]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#34A7E0]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            
+            {/* Floating Icons - Hidden on mobile, visible on desktop */}
+            <motion.div
+              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden lg:block absolute top-24 right-16 text-white/8 text-5xl"
+            >
+              💼
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden lg:block absolute bottom-24 left-16 text-white/8 text-5xl"
+            >
+              🚀
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden xl:block absolute top-1/2 right-32 text-white/8 text-4xl"
+            >
+              💡
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden xl:block absolute top-1/3 left-32 text-white/8 text-4xl"
+            >
+              📈
+            </motion.div>
+          </div>
         <section className="relative overflow-hidden pt-12 pb-24" style={{ background: 'linear-gradient(160deg, #EEF1FF 0%, #F3F8FF 50%, #F0FDF9 100%)' }}>
           <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-40 pointer-events-none" style={{ background: 'radial-gradient(circle, #C7D2FE, transparent)' }} />
           <div className="absolute bottom-0 left-10 w-80 h-80 rounded-full blur-3xl opacity-30 pointer-events-none" style={{ background: 'radial-gradient(circle, #BBF7D0, transparent)' }} />
@@ -227,45 +265,12 @@ const BlogPost = () => {
         </section>
 
         {/* ── Content area ── */}
-        <section className="relative bg-gradient-to-br from-[#2D2E84] via-[#383AB4] to-[#1A1B5C] py-32 overflow-hidden">
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {/* Floating Gradient Orbs - Optimized positioning */}
-            <div className="absolute top-10 left-5 w-64 h-64 bg-[#7075D0]/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-5 w-80 h-80 bg-[#383AB4]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#34A7E0]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-            
-            {/* Floating Icons - Hidden on mobile, visible on desktop */}
-            <motion.div
-              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden lg:block absolute top-24 right-16 text-white/8 text-5xl"
-            >
-              💼
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden lg:block absolute bottom-24 left-16 text-white/8 text-5xl"
-            >
-              🚀
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden xl:block absolute top-1/2 right-32 text-white/8 text-4xl"
-            >
-              💡
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden xl:block absolute top-1/3 left-32 text-white/8 text-4xl"
-            >
-              📈
-            </motion.div>
+        
+          <div className="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+              <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249,250,251)"/>
+            </svg>
           </div>
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
             <div className="flex gap-8 xl:gap-12 items-start">
 
@@ -302,7 +307,7 @@ const BlogPost = () => {
                   </div>
                 </div>
               </aside>
-
+              
               {/* ── Article ── */}
               <motion.article initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="flex-1 min-w-0">
                 <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-10 lg:p-14">
@@ -337,11 +342,7 @@ const BlogPost = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-              <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249,250,251)"/>
-            </svg>
-          </div>
+          
         </section>
       </div>
     </>
