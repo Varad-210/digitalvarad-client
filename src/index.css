@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Primary Colors */
-  --primary-dark: #2A2A72;
-  --primary-light: #3F3DBF;
-  
-  /* Accent Colors */
-  --accent-teal: #2DD4BF;
-  --accent-blue: #3B82F6;
-  
-  /* Text Colors */
-  --text-white: #ffffff;
-  --text-light: #E5E7EB;
-  
-  /* UI Colors */
-  --glass-border: rgba(255, 255, 255, 0.2);
-  
-  /* Gradients */
-  --primary-gradient: linear-gradient(135deg, #3F3DBF, #2A2A72);
-  --accent-gradient: linear-gradient(90deg, #2DD4BF, #3B82F6);
-}
-
 html,
 body {
   overflow-x: hidden;
@@ -38,49 +17,10 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: var(--primary-gradient);
-  color: var(--text-white);
 }
 
 input, textarea {
   -webkit-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
-}
-
-/* Utility Classes */
-.btn-primary {
-  background: var(--accent-gradient);
-  color: white;
-  padding: 14px 28px;
-  border-radius: 12px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  transform: scale(1.05);
-}
-
-.btn-glass {
-  background: transparent;
-  border: 1px solid var(--glass-border);
-  padding: 14px 28px;
-  border-radius: 12px;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-glass:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.gradient-text {
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
