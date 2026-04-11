@@ -97,7 +97,7 @@ const Blogs = () => {
   return (
     <div className="min-h-screen bg-primary-50">
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#4338ca] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] via-[#4338ca] to-[#0f172a] py-24 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Floating Gradient Orbs */}
