@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Home = ({ openContactPopup }) => {
   const testimonials = [
@@ -238,7 +238,7 @@ const Home = ({ openContactPopup }) => {
             <p className="text-xl text-indigo-100 mb-8">Join thousands of students who've transformed their lives with Skillmint</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/courses"
+                href="/courses"
                 className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
               >
                 View All Courses
