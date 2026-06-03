@@ -7,9 +7,11 @@ import SalesMarketingContent from './SalesMarketingContent';
 import AffiliateGrowthContent from './AffiliateGrowthContent';
 import TopAIToolsContent from './TopAIToolsContent';
 import ContentResearchContent from './ContentResearchContent';
+import FreelancingRoadmapContent from './FreelancingRoadmapContent';
 import { blogPosts } from './Blogs';
 
 const blogData = {
+  'freelancing-roadmap': { title: 'Freelancing Roadmap — The Real Roadmap to Earn Online', subtitle: 'No fluff. No theory. Step-by-step execution guide from skill to first client.', category: 'Skills & Learning', readTime: '20 min read', date: 'April 10, 2026', author: 'Varad Sontakke', emoji: '💼' },
   'how-to-do-content-research': { title: 'How to Do Content Research', subtitle: 'Complete Beginner Guide for Consistent Growth', category: 'Content Creation', readTime: '10 min read', date: 'April 9, 2026', author: 'Varad Sontakke', emoji: '🔍' },
   'top-50-ai-tools': { title: 'Top 50 AI Tools to Build Online Business', subtitle: 'Complete Guide for Students & Beginners', category: 'AI Tools & Tech', readTime: '15 min read', date: 'April 9, 2026', author: 'Varad Sontakke', emoji: '🤖' },
   'sell-bizgurukul-instagram': { title: 'How to Sell Bizgurukul on Instagram and Earn ₹800 to ₹14,000 Per Sale', subtitle: 'Complete Beginner Guide (2026)', category: 'Affiliate Marketing', readTime: '18 min read', date: 'April 9, 2026', author: 'Varad Sontakke', emoji: '📱' },
@@ -30,6 +32,25 @@ export const Section = ({ id, number, title, children }) => (
 );
 
 const tocItemsBySlug = {
+  'freelancing-roadmap': [
+    { id: 'intro', label: 'Meet Arjun' },
+    { id: 'step-1', label: 'Step 1: Pick ONE Skill' },
+    { id: 'step-2', label: 'Step 2: Choose a Niche' },
+    { id: 'step-3', label: 'Step 3: Research Pain Points' },
+    { id: 'step-4', label: 'Step 4: Build an Offer' },
+    { id: 'step-5', label: 'Step 5: Create Proof' },
+    { id: 'step-6', label: 'Step 6: Important Documents' },
+    { id: 'step-7', label: 'Step 7: Find First Clients' },
+    { id: 'step-8', label: 'Step 8: Deliver Professionally' },
+    { id: 'step-9', label: 'Step 9: Retain & Grow' },
+    { id: 'skills', label: 'Must-Have Skills' },
+    { id: 'mistakes', label: '8 Mistakes to Avoid' },
+    { id: 'comparison', label: 'Freelancing vs Affiliate' },
+    { id: 'branding', label: 'Personal Branding' },
+    { id: 'takeaways', label: 'Key Takeaways' },
+    { id: 'cta', label: 'Join Community' },
+    { id: 'related-blogs', label: 'Related Articles' },
+  ],
   'how-to-do-content-research': [
     { id: 'intro', label: 'Introduction' }, { id: 'what-is', label: 'What is Content Research' }, { id: 'know-audience', label: 'Know Your Audience' }, { id: 'find-ideas', label: 'Find Proven Ideas' }, { id: 'content-types', label: 'Content Types' }, { id: 'content-bucket', label: 'Content Bucket' }, { id: 'pillars', label: 'Content Pillars Strategy' }, { id: 'viral-method', label: 'Viral Research Method' }, { id: 'smart-blend', label: 'Smart Ways to Blend' }, { id: 'bonus-tips', label: 'Bonus Research Tips' }, { id: 'takeaways', label: 'Key Takeaways' }, { id: 'cta', label: 'Join Community' },
   ],
@@ -53,6 +74,7 @@ const tocItemsBySlug = {
 
 const renderBlogContent = (slug) => {
   switch (slug) {
+    case 'freelancing-roadmap': return <FreelancingRoadmapContent />;
     case 'how-to-do-content-research': return <ContentResearchContent />;
     case 'top-50-ai-tools': return <TopAIToolsContent />;
     case 'high-income-skills': return <HighIncomeSkillsContent />;

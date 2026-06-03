@@ -302,9 +302,9 @@ const Home = () => {
               className="md:w-1/3 flex-shrink-0"
             >
               <img
-                src="https://res.cloudinary.com/dclr2ihxn/image/upload/v1775746519/Photo_af7zz1.jpg"
+                src="https://res.cloudinary.com/dclr2ihxn/image/upload/v1780492932/ChatGPT_Image_Jun_3_2026_12_13_06_AM_ysprkf.png"
                 alt="Varad Mahadev Sontakke"
-                className="w-full max-w-sm mx-auto rounded-2xl shadow-2xl border-4 border-primary-100"
+                className="w-sm max-w-sm mx-auto rounded-2xl shadow-2xl border-4 border-primary-100"
               />
             </motion.div>
 

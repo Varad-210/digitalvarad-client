@@ -8,6 +8,9 @@ import Products from './pages/Products';
 import Blogs from './pages/Blogs';
 import BlogPost from './pages/BlogPost';
 import ContactPopup from './components/ContactPopup';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
 
 
 
@@ -39,6 +42,10 @@ function App() {
 
         <Route path="/blog" element={<Blogs />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
       </Routes>
       <Footer />
       <ContactPopup isOpen={isContactOpen} onClose={closeContactPopup} />

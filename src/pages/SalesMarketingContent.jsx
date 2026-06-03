@@ -1,4 +1,6 @@
 import { Section } from './BlogPost';
+import { Link } from 'react-router-dom';
+import { blogPosts } from './Blogs';
 
 const SalesMarketingContent = () => {
   return (
@@ -400,6 +402,53 @@ const SalesMarketingContent = () => {
             </svg>
             Message on WhatsApp to Get Started
           </a>
+        </div>
+      </Section>
+
+      {/* ─── Section 10: Related Blog Posts (Internal Links) ─── */}
+      <Section id="related-blogs" number="10" title="📚 Continue Your Learning Journey">
+        <p className="mb-6">Explore these related articles to deepen your knowledge:</p>
+        
+        <div className="grid md:grid-cols-2 gap-4">
+          {blogPosts
+            .filter(post => post.id !== 'sales-and-marketing' && ['freelancing-roadmap', 'high-income-skills', 'how-to-do-content-research', 'affiliate-marketing-growth'].includes(post.id))
+            .map((post) => (
+              <Link
+                key={post.id}
+                to={`/blog/${post.id}`}
+                className="group flex gap-4 bg-gradient-to-br from-indigo-50/80 to-purple-50/80 rounded-xl p-5 border border-indigo-100 hover:border-indigo-300 hover:shadow-lg transition-all duration-300"
+              >
+                <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  {post.emoji}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-gray-900 text-sm mb-1 line-clamp-2 group-hover:text-indigo-700 transition-colors">
+                    {post.title}
+                  </p>
+                  <p className="text-xs text-gray-500 line-clamp-2 mb-2">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center gap-2 text-xs text-indigo-600 font-semibold">
+                    Read now
+                    <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+        </div>
+
+        <div className="mt-6 text-center">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold text-sm"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            View All Blog Posts
+          </Link>
         </div>
       </Section>
     </>
