@@ -48,16 +48,28 @@ const Navbar = ({ openContactPopup }) => {
               Home
             </Link>
             <Link
-              to="/products"
+              to="/journal"
               className="px-4 py-2 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/50 transition-all duration-200 font-medium"
             >
-              Courses
+              My Journal
             </Link>
             <Link
               to="/blog"
               className="px-4 py-2 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/50 transition-all duration-200 font-medium"
             >
               Blog
+            </Link>
+            <Link
+              to="/products"
+              className="px-4 py-2 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/50 transition-all duration-200 font-medium"
+            >
+              Courses
+            </Link>
+            <Link
+              to="/digital-products"
+              className="px-4 py-2 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/50 transition-all duration-200 font-medium"
+            >
+              Digital Products
             </Link>
             <motion.button
               whileHover={{ scale: 1.03 }}
@@ -118,6 +130,20 @@ const Navbar = ({ openContactPopup }) => {
                 className="block px-4 py-2.5 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/50 transition-all font-medium"
               >
                 Blog
+              </Link>
+              <Link
+                to="/journal"
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2.5 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/50 transition-all font-medium"
+              >
+                My Journal
+              </Link>
+              <Link
+                to="/digital-products"
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2.5 rounded-lg text-gray-700 hover:text-indigo-600 hover:bg-indigo-50/50 transition-all font-medium"
+              >
+                Digital Products
               </Link>
               <button
                 onClick={() => { setIsOpen(false); openContactPopup && openContactPopup(); }}
