@@ -1,6 +1,9 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { PAGE_SEO } from '../utils/seo';
+
 
 export const blogPosts = [
   { id: 'freelancing-roadmap', title: 'Freelancing Roadmap — The Real Roadmap to Earn Online', subtitle: 'No fluff. No theory. Step-by-step execution guide from skill to first client.', excerpt: 'The complete 9-step roadmap to start freelancing and earn your first income online. Real examples, common mistakes, and the documents you actually need. From picking a skill to landing retainer clients.', category: 'Skills & Learning', readTime: '20 min read', date: 'April 10, 2026', emoji: '💼', tags: ['Freelancing', 'Skills', 'Income', 'Students'], featured: true },
@@ -36,6 +39,17 @@ const Blogs = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#F8F9FE' }}>
+      {/* ── SEO Helmet ── */}
+      <Helmet>
+        <title>{PAGE_SEO.blog.title}</title>
+        <meta name="description" content={PAGE_SEO.blog.description} />
+        <link rel="canonical" href={PAGE_SEO.blog.canonical} />
+        <meta property="og:title" content={PAGE_SEO.blog.title} />
+        <meta property="og:description" content={PAGE_SEO.blog.description} />
+        <meta property="og:url" content={PAGE_SEO.blog.canonical} />
+        <meta property="og:image" content={PAGE_SEO.blog.ogImage} />
+        <meta property="og:type" content="website" />
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#2D2E84] via-[#383AB4] to-[#1A1B5C] py-32 overflow-hidden">

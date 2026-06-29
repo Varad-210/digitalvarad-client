@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
@@ -8,7 +9,9 @@ import AffiliateGrowthContent from './AffiliateGrowthContent';
 import TopAIToolsContent from './TopAIToolsContent';
 import ContentResearchContent from './ContentResearchContent';
 import FreelancingRoadmapContent from './FreelancingRoadmapContent';
+import SellBizgurukulInstagramContent from './SellBizgurukulInstagramContent';
 import { blogPosts } from './Blogs';
+import { getSeoForPost, getArticleSchema, getBreadcrumbSchema } from '../utils/seo';
 
 const blogData = {
   'freelancing-roadmap': { title: 'Freelancing Roadmap — The Real Roadmap to Earn Online', subtitle: 'No fluff. No theory. Step-by-step execution guide from skill to first client.', category: 'Skills & Learning', readTime: '20 min read', date: 'April 10, 2026', author: 'Varad Sontakke', emoji: '💼' },
@@ -69,7 +72,18 @@ const tocItemsBySlug = {
   'affiliate-marketing-growth': [
     { id: 'intro', label: 'Introduction' }, { id: 'mistake-1', label: 'Mistake #1: No Routine' }, { id: 'mistake-2', label: 'Mistake #2: Inconsistent Learning' }, { id: 'mistake-3', label: 'Mistake #3: Basics Not Clear' }, { id: 'mistake-4', label: 'Mistake #4: No Social Media' }, { id: 'mistake-5', label: 'Mistake #5: Ignoring Health' }, { id: 'mistake-6', label: 'Mistake #6: No Self Belief' }, { id: 'growth-rule', label: '6-Month Growth Rule' }, { id: 'final-truth', label: 'Final Truth' }, { id: 'cta', label: 'Join Biz-Creator Community' },
   ],
-  'sell-bizgurukul-instagram': [{ id: 'intro', label: 'Introduction' }],
+  'sell-bizgurukul-instagram': [
+    { id: 'intro', label: 'Introduction' },
+    { id: 'why-instagram', label: 'Why Instagram?' },
+    { id: 'profile-setup', label: 'Step 1: Profile Setup' },
+    { id: 'content-strategy', label: 'Step 2: Content Strategy' },
+    { id: 'dm-strategy', label: 'Step 3: DM Sales Script' },
+    { id: 'commission', label: 'Commission Structure' },
+    { id: 'growth', label: 'Step 4: Grow Your Audience' },
+    { id: 'action-plan', label: '30-Day Action Plan' },
+    { id: 'takeaways', label: 'Key Takeaways' },
+    { id: 'cta', label: 'Join Community' },
+  ],
 };
 
 const renderBlogContent = (slug) => {
@@ -81,6 +95,7 @@ const renderBlogContent = (slug) => {
     case 'escape-the-matrix': return <EscapeMatrixContent />;
     case 'sales-and-marketing': return <SalesMarketingContent />;
     case 'affiliate-marketing-growth': return <AffiliateGrowthContent />;
+    case 'sell-bizgurukul-instagram': return <SellBizgurukulInstagramContent />;
     default: return (<Section id="intro" number="1" title="Coming Soon"><p>This blog post is coming soon. Stay tuned!</p></Section>);
   }
 };
@@ -195,8 +210,34 @@ const BlogPost = () => {
     }
   }, [activeSection]);
 
+  const seo = getSeoForPost(slug);
+  const articleSchema = getArticleSchema({
+    slug,
+    title: seo.title,
+    description: seo.description,
+    datePublished: post.date,
+  });
+  const breadcrumbSchema = getBreadcrumbSchema(slug, post.title);
+
   return (
     <>
+      {/* ── Per-post SEO Helmet ── */}
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={seo.canonical} />
+        <meta property="og:image" content={seo.ogImage} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={seo.ogImage} />
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      </Helmet>
+
       <ReadingProgress />
       <MobileTOC tocItems={tocItems} activeSection={activeSection} />
 

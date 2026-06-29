@@ -12,7 +12,13 @@ import ContactPopup from './components/ContactPopup';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
+import CookieConsent from './components/CookieConsent';
+import useTracking from './hooks/useTracking';
 
+const Tracker = () => {
+  useTracking();
+  return null;
+};
 
 
 function App() {
@@ -36,6 +42,7 @@ function App() {
     // ⚠️ React Router v7 will change relative splat route behavior.
     // To future-proof, consider migrating to RouterProvider with future flags.
     <Router>
+      <Tracker />
       <Navbar openContactPopup={openContactPopup} />
       <Routes>
         <Route path="/" element={<Home openContactPopup={openContactPopup} />} />
@@ -51,6 +58,7 @@ function App() {
       </Routes>
       <Footer />
       <ContactPopup isOpen={isContactOpen} onClose={closeContactPopup} />
+      <CookieConsent />
     </Router>
   );
 }

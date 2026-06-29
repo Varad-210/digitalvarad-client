@@ -1,5 +1,13 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import {
+  PAGE_SEO,
+  PERSON_SCHEMA,
+  ORGANIZATION_SCHEMA,
+  FAQ_SCHEMA,
+  WEBSITE_SCHEMA,
+} from '../utils/seo';
 const Home = () => {
 
   const successStories = [
@@ -105,6 +113,25 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      {/* ── SEO Helmet ── */}
+      <Helmet>
+        <title>{PAGE_SEO.home.title}</title>
+        <meta name="description" content={PAGE_SEO.home.description} />
+        <link rel="canonical" href={PAGE_SEO.home.canonical} />
+        <meta property="og:title" content={PAGE_SEO.home.title} />
+        <meta property="og:description" content={PAGE_SEO.home.description} />
+        <meta property="og:url" content={PAGE_SEO.home.canonical} />
+        <meta property="og:image" content={PAGE_SEO.home.ogImage} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content={PAGE_SEO.home.title} />
+        <meta name="twitter:description" content={PAGE_SEO.home.description} />
+        <meta name="twitter:image" content={PAGE_SEO.home.ogImage} />
+        <script type="application/ld+json">{JSON.stringify(PERSON_SCHEMA)}</script>
+        <script type="application/ld+json">{JSON.stringify(ORGANIZATION_SCHEMA)}</script>
+        <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
+        <script type="application/ld+json">{JSON.stringify(WEBSITE_SCHEMA)}</script>
+      </Helmet>
+
       {/* Floating Contact Button */}
       <a
         href="https://wa.me/919049671938?text=Hi%20Varad,%20I%20want%20to%20learn%20more%20about%20digital%20skills"
