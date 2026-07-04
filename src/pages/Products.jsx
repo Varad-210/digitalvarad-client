@@ -10,8 +10,8 @@ const Products = () => {
       title: "Marketing Mastery",
       subtitle: "MASTERY",
       description: "Master digital marketing strategies that drive growth, generate leads, and build sustainable online businesses.",
-      price: "₹1,499",
-      originalPrice: "₹2,999",
+      price: "₹1,599",
+      originalPrice: "₹6,999",
       image: "https://res.cloudinary.com/dclr2ihxn/image/upload/v1775747208/marketing_bundle_mgb5v8.webp",
       stats: "1 Course | 15+ Hours",
       features: [
@@ -35,8 +35,8 @@ const Products = () => {
       title: "Branding Mastery",
       subtitle: "MASTERY",
       description: "Build your personal brand and establish a powerful digital presence that attracts opportunities and opens doors.",
-      price: "₹3,499",
-      originalPrice: "₹6,999",
+      price: "₹3,999",
+      originalPrice: "₹8,999",
       image: "https://res.cloudinary.com/dclr2ihxn/image/upload/v1775747208/branding_bundle_lcd6gp.webp",
       stats: "5 Courses | 67+ Hours",
       features: [
@@ -72,8 +72,8 @@ const Products = () => {
       title: "Traffic Mastery",
       subtitle: "MASTERY",
       description: "Master the art of driving targeted traffic and converting visitors into customers using proven digital marketing strategies.",
-      price: "₹8,999",
-      originalPrice: "₹17,999",
+      price: "₹7,999",
+      originalPrice: "₹10,999",
       image: "https://res.cloudinary.com/dclr2ihxn/image/upload/v1775747208/traffic_bundle_nx9oj2.webp",
       stats: "5 Courses | 117+ Hours",
       features: [
@@ -113,8 +113,8 @@ const Products = () => {
       title: "Influence Mastery",
       subtitle: "MASTERY",
       description: "Build authority, influence, and thought leadership in your industry through powerful communication and content.",
-      price: "₹12,999",
-      originalPrice: "₹25,999",
+      price: "₹13,999",
+      originalPrice: "₹17,999",
       image: "https://res.cloudinary.com/dclr2ihxn/image/upload/v1775747208/influence_bundle_lzyaj9.webp",
       stats: "6 Courses | 171+ Hours",
       features: [
@@ -152,15 +152,15 @@ const Products = () => {
         }
       ],
       outcome: "Build massive influence and authority, master public speaking and communication, create content that positions you as a thought leader, and monetize your expertise through multiple channels.",
-      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=aBdsUosgN7I=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=07Ms7aAcmyFwqcfwtfVdCZ9IB175jy6q"
+      affiliateLink: ""
     },
     {
       id: 5,
       title: "Finance Mastery",
       subtitle: "MASTERY",
       description: "Build wealth and achieve financial freedom through smart investing, trading strategies, and multiple income streams.",
-      price: "₹14,999",
-      originalPrice: "₹29,999",
+      price: "₹18,999",
+      originalPrice: "₹23,999",
       image: "https://res.cloudinary.com/dclr2ihxn/image/upload/v1775747208/finance_bundle_aymvxs.webp",
       stats: "6 Courses | 200+ Hours",
       features: [
@@ -198,23 +198,26 @@ const Products = () => {
         }
       ],
       outcome: "Achieve financial literacy, build multiple income streams, master investing and trading, develop high-income skills like copywriting and sales, and create long-term wealth.",
-      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=KRl5o+bvMnw=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=07Ms7aAcmyELr4XdyQUJoTh4CI/SNfdq"
+      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=KRl5o+bvMnw=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=Y9RCeqffDf78nKPpLQXZ5wQ6lLOdHs2h"
     },
     {
       id: 6,
       title: "Business Mastery",
       subtitle: "MASTERY",
       description: "Launch, scale, and automate profitable online businesses using proven e-commerce and digital business models.",
-      price: "₹19,999",
-      originalPrice: "₹39,999",
+      price: "₹26,999",
+      originalPrice: "₹32,999",
       image: "https://res.cloudinary.com/dclr2ihxn/image/upload/v1775747208/business_bundle_yydo0b.webp",
-      stats: "5 Courses | 220+ Hours",
+      stats: "47 Courses | 220+ Hours",
       features: [
         "Dropshipping & Shopify - Start e-commerce with zero inventory",
-        "Amazon FBA - Sell on world's largest marketplace",
-        "Print On Demand - Create custom product business",
-        "Marketing Agency - Build service-based business",
-        "Digital Course Creation - Package and sell your expertise"
+        "Ultimate Amazon FBA - Sell on world's largest marketplace",
+        "Print On Demand 101 - Create custom product business",
+        "Start And Scale Your Marketing Agency",
+        "Build And Launch Your Own E-Course",
+        "Youtube Content Creation Mastery",
+        "Earn through Etsy",
+        "AI and ChatGPT",
       ],
       coursesIncluded: [
         {
@@ -230,7 +233,7 @@ const Products = () => {
           description: "Create and sell custom products with zero upfront costs. Master design creation, platform selection, marketing strategies, and how to build a profitable POD brand."
         },
         {
-          name: "Start Marketing Agency",
+          name: "Start And Scale Your Marketing Agency",
           description: "Launch your own digital marketing agency. Learn service packaging, client acquisition, project management, team building, and how to scale to 6-figures and beyond."
         },
         {
@@ -239,7 +242,7 @@ const Products = () => {
         }
       ],
       outcome: "Launch multiple online business models, master e-commerce and digital products, build scalable systems, create passive income streams, and achieve entrepreneurial freedom.",
-      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=DvjvJCTJRxU=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=07Ms7aAcmyELr4XdyQUJoVw/9j4XWgc4"
+      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=DvjvJCTJRxU=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=Y9RCeqffDf78nKPpLQXZ5wQ6lLOdHs2h"
     },
     {
       id: 7,
