@@ -19,18 +19,29 @@ const ContactPopup = ({ isOpen, onClose }) => {
     setMessage('');
 
     try {
-      // 🔹 Use your backend API URL (update if needed)
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-      const response = await axios.post(`${apiUrl}/api/contact/submit`, formData);
+      // Web3Forms endpoint
+      const web3FormsUrl = 'https://api.web3forms.com/submit';
+      
+      const payload = {
+        ...formData,
+        // Replace this with your actual Web3Forms access key, or add it to your .env file
+        access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY'
+      };
 
-      setMessage(response.data.message || 'Form submitted successfully!');
-      console.log(response.data.message || 'Form submitted successfully!');
-      setFormData({ name: '', email: '', phone: '', city: '', age: '' });
+      const response = await axios.post(web3FormsUrl, payload);
 
-      setTimeout(() => {
-        onClose();   // close modal after short delay
-        setMessage('');
-      }, 2000);
+      if (response.data.success) {
+        setMessage(response.data.message || 'Form submitted successfully!');
+        console.log(response.data.message || 'Form submitted successfully!');
+        setFormData({ name: '', email: '', phone: '', city: '', age: '' });
+
+        setTimeout(() => {
+          onClose();   // close modal after short delay
+          setMessage('');
+        }, 2000);
+      } else {
+        setMessage('Submission failed. Please try again.');
+      }
     } catch (error) {
       setMessage(error.response?.data?.message || 'Error submitting form');
     } finally {
