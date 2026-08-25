@@ -89,36 +89,7 @@ const DigitalProducts = () => {
           <div className="absolute bottom-10 right-5 w-80 h-80 bg-[#383AB4]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#34A7E0]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
 
-          {/* Floating Icons - Hidden on mobile, visible on desktop */}
-          <motion.div
-            animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:block absolute top-24 right-16 text-white/8 text-5xl"
-          >
-            💼
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:block absolute bottom-24 left-16 text-white/8 text-5xl"
-          >
-            🚀
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden xl:block absolute top-1/2 right-32 text-white/8 text-4xl"
-          >
-            💡
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
-            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden xl:block absolute top-1/3 left-32 text-white/8 text-4xl"
-          >
-            📈
-          </motion.div>
-        </div>
+          {/* Floating Icons Removed */}</div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div

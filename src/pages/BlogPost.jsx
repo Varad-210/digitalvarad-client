@@ -259,39 +259,7 @@ const BlogPost = () => {
               style={{ animationDelay: "0.5s" }}
             ></div>
 
-            {/* Floating Icons */}
-            <motion.div
-              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden lg:block absolute top-24 right-16 text-white/20 text-5xl"
-            >
-              💼
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden lg:block absolute bottom-24 left-16 text-white/20 text-5xl"
-            >
-              🚀
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden xl:block absolute top-1/2 right-32 text-white/20 text-4xl"
-            >
-              💡
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden xl:block absolute top-1/3 left-32 text-white/20 text-4xl"
-            >
-              📈
-            </motion.div>
-          </div>
+            {/* Floating Icons Removed */}</div>
 
           {/* Hero Content */}
           <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">

@@ -77,9 +77,7 @@ const Navbar = ({ openContactPopup }) => {
               onClick={openContactPopup}
               className="ml-4 px-6 py-2.5 rounded-xl font-semibold text-white relative overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-cyan-500 transition-all duration-300"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 blur-xl bg-gradient-to-r from-indigo-400 to-cyan-400 opacity-30 group-hover:opacity-50 transition-opacity"></div>
+              
               <span className="relative">Contact Us</span>
             </motion.button>
           </div>
@@ -147,7 +145,7 @@ const Navbar = ({ openContactPopup }) => {
               </Link>
               <button
                 onClick={() => { setIsOpen(false); openContactPopup && openContactPopup(); }}
-                className="w-full text-center mt-2 px-4 py-2.5 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-500 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 transition-all"
+                className="w-full text-center mt-2 px-4 py-2.5 rounded-xl font-semibold text-indigo-600 border-2 border-indigo-200 hover:border-indigo-600 hover:bg-indigo-50 transition-all"
               >
                 Contact Us
               </button>

@@ -153,36 +153,7 @@ const Home = () => {
           <div className="absolute bottom-10 right-5 w-80 h-80 bg-[#383AB4]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#34A7E0]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
           
-          {/* Floating Icons - Hidden on mobile, visible on desktop */}
-          <motion.div
-            animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:block absolute top-24 right-16 text-white/8 text-5xl"
-          >
-            💼
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:block absolute bottom-24 left-16 text-white/8 text-5xl"
-          >
-            🚀
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden xl:block absolute top-1/2 right-32 text-white/8 text-4xl"
-          >
-            💡
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
-            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden xl:block absolute top-1/3 left-32 text-white/8 text-4xl"
-          >
-            📈
-          </motion.div>
-        </div>
+          {/* Floating Icons Removed */}</div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -249,7 +220,7 @@ const Home = () => {
                 href="https://www.bizgurukul.com/Biz/careerwithbizgurukul"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-8 py-4 rounded-xl text-lg font-semibold backdrop-blur-lg bg-white/10 border-2 border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/30"
+                className="px-8 py-4 rounded-xl text-lg font-semibold border-2 border-white/30 text-white hover:border-white/60 transition-all duration-300 hover:bg-white/10"
               >
                 <span className="flex items-center gap-2 text-white">
                   <span>💼</span>
@@ -260,7 +231,7 @@ const Home = () => {
               {/* Tertiary Button - Read Blog */}
               <Link
                 to="/blog"
-                className="group relative px-8 py-4 rounded-xl text-lg font-semibold border-2 border-white/30 hover:border-white/50 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/20"
+                className="px-8 py-4 rounded-xl text-lg font-semibold border-2 border-white/30 text-white hover:border-white/60 transition-all duration-300 hover:bg-white/10"
               >
                 <span className="flex items-center gap-2 text-white">
                   <span>📘</span>
@@ -328,11 +299,13 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="md:w-1/3 flex-shrink-0"
             >
-              <img
-                src="https://res.cloudinary.com/dclr2ihxn/image/upload/v1780492932/ChatGPT_Image_Jun_3_2026_12_13_06_AM_ysprkf.png"
-                alt="Varad Mahadev Sontakke"
-                className="w-sm max-w-sm mx-auto rounded-2xl shadow-2xl border-4 border-primary-100"
-              />
+              
+              <div className="w-full h-full min-h-[300px] bg-gradient-to-br from-primary-100 to-indigo-100 rounded-2xl shadow-2xl border-4 border-white flex items-center justify-center p-8">
+                <svg className="w-32 h-32 text-primary-500 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15M9 11l3 3L22 4" />
+                </svg>
+              </div>
+
             </motion.div>
 
             {/* Content Section */}
@@ -456,12 +429,12 @@ const Home = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
               >
                 <div className="flex items-center mb-4">
                   <span className="text-4xl mr-4">{story.avatar}</span>
                   <div>
-                    <h4 className="font-bold text-gray-900">{story.name}</h4>
+                    <h3 className="font-bold text-gray-900">{story.name}</h3>
                     <p className="text-primary-500 text-sm font-medium">{story.role}</p>
                   </div>
                 </div>
@@ -522,22 +495,7 @@ const Home = () => {
           <div className="absolute top-10 right-5 w-80 h-80 bg-[#20B597]/15 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 left-5 w-72 h-78 bg-[#34A7E0]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           
-          {/* Floating Icons - Hidden on mobile */}
-          <motion.div
-            animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:block absolute top-16 left-16 text-white/8 text-4xl"
-          >
-            🎯
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:block absolute bottom-16 right-16 text-white/8 text-4xl"
-          >
-            ⭐
-          </motion.div>
-        </div>
+          {/* Floating Icons Removed */}</div>
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
             <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249,250,251)"/>
