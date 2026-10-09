@@ -28,7 +28,7 @@ const Products = () => {
         }
       ],
       outcome: "Build comprehensive digital marketing skills, generate consistent leads, create effective sales funnels, master customer acquisition strategies, and grow your online presence profitably.",
-      affiliateLink: "https://www.bizgurukul.com/Biz/BundlePage/BrandingMastery.aspx?id=oYPViZV/GDw=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=07Ms7aAcmyFySVTBk0HUxBI1qWaeC24r"
+      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=+IE6GzOTU90=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=t5AunlpUGcNOUCk0Q805RHq4OIAWi9aq"
     },
     {
       id: 2,
@@ -65,7 +65,7 @@ const Products = () => {
         }
       ],
       outcome: "Build a powerful personal brand, master communication across all platforms, grow your social media presence organically, and create content that resonates with your target audience.",
-      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=oYPViZV/GDw=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=hrCtjO6zJKRal/c78Yl9Xp6MMl7BxTGn"
+      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=oYPViZV/GDw=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=t5AunlpUGcNOUCk0Q805RHq4OIAWi9aq"
     },
     {
       id: 3,
@@ -152,7 +152,7 @@ const Products = () => {
         }
       ],
       outcome: "Build massive influence and authority, master public speaking and communication, create content that positions you as a thought leader, and monetize your expertise through multiple channels.",
-      affiliateLink: ""
+      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=lPC2QdX4/P0=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=t5AunlpUGcNOUCk0Q805RHq4OIAWi9aq"
     },
     {
       id: 5,
@@ -198,7 +198,7 @@ const Products = () => {
         }
       ],
       outcome: "Achieve financial literacy, build multiple income streams, master investing and trading, develop high-income skills like copywriting and sales, and create long-term wealth.",
-      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=KRl5o+bvMnw=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=Y9RCeqffDf78nKPpLQXZ5wQ6lLOdHs2h"
+      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=KRl5o+bvMnw=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=t5AunlpUGcNOUCk0Q805RHq4OIAWi9aq"
     },
     {
       id: 6,
@@ -242,7 +242,7 @@ const Products = () => {
         }
       ],
       outcome: "Launch multiple online business models, master e-commerce and digital products, build scalable systems, create passive income streams, and achieve entrepreneurial freedom.",
-      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=DvjvJCTJRxU=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=Y9RCeqffDf78nKPpLQXZ5wQ6lLOdHs2h"
+      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=DvjvJCTJRxU=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=t5AunlpUGcNOUCk0Q805RHq4OIAWi9aq"
     },
     {
       id: 7,

@@ -15,6 +15,9 @@ const Footer = () => {
                 <motion.img
               src={logo}
               alt="VaradBuilds logo"
+              loading="lazy"
+              width="48"
+              height="48"
               className="w-12 h-12 rounded-3xl shadow-lg shadow-cyan-200/30 object-cover"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.25 }}

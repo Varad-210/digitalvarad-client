@@ -86,6 +86,7 @@ const Navbar = ({ openContactPopup }) => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
               className="text-gray-600 hover:text-indigo-600 transition-colors p-2"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
