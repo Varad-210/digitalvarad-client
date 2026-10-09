@@ -9,6 +9,7 @@ import AffiliateGrowthContent from './AffiliateGrowthContent';
 import TopAIToolsContent from './TopAIToolsContent';
 import ContentResearchContent from './ContentResearchContent';
 import FreelancingRoadmapContent from './FreelancingRoadmapContent';
+import FrontendResources2026Content from './FrontendResources2026Content';
 import SellBizgurukulInstagramContent from './SellBizgurukulInstagramContent';
 import { blogPosts } from './Blogs';
 import { getSeoForPost, getArticleSchema, getBreadcrumbSchema } from '../utils/seo';
@@ -17,6 +18,7 @@ const blogData = {
   'freelancing-roadmap': { title: 'Freelancing Roadmap — The Real Roadmap to Earn Online', subtitle: 'No fluff. No theory. Step-by-step execution guide from skill to first client.', category: 'Skills & Learning', readTime: '20 min read', date: 'April 10, 2026', author: 'Varad Sontakke', emoji: '💼' },
   'how-to-do-content-research': { title: 'How to Do Content Research', subtitle: 'Complete Beginner Guide for Consistent Growth', category: 'Content Creation', readTime: '10 min read', date: 'April 9, 2026', author: 'Varad Sontakke', emoji: '🔍' },
   'top-50-ai-tools': { title: 'Top 50 AI Tools to Build Online Business', subtitle: 'Complete Guide for Students & Beginners', category: 'AI Tools & Tech', readTime: '15 min read', date: 'April 9, 2026', author: 'Varad Sontakke', emoji: '🤖' },
+  'frontend-resources-2026': { title: 'Frontend Resources to Build Better Websites in 2026', subtitle: 'A practical, beginner-friendly collection of tools for designing, building, improving, and sharing your frontend projects.', category: 'Skills & Learning', readTime: '8 min read', date: 'October 9, 2026', author: 'Varad Sontakke', emoji: '🧰' },
   'sell-bizgurukul-instagram': { title: 'How to Sell Bizgurukul on Instagram and Earn ₹800 to ₹14,000 Per Sale', subtitle: 'Complete Beginner Guide (2026)', category: 'Affiliate Marketing', readTime: '18 min read', date: 'April 9, 2026', author: 'Varad Sontakke', emoji: '📱' },
   'escape-the-matrix': { title: 'Escape the Matrix: Why the Education System Keeps Students Trapped', subtitle: 'And How to Break Free', category: 'Mindset & Growth', readTime: '12 min read', date: 'April 9, 2026', author: 'Varad Sontakke', emoji: '🎓' },
   'high-income-skills': { title: 'High Income Skills: The Ultimate Guide for Students to Achieve Financial Freedom', subtitle: 'From ₹10K Salary to ₹1L+ Income', category: 'Skills & Learning', readTime: '10 min read', date: 'April 9, 2026', author: 'Varad Sontakke', emoji: '💰' },
@@ -60,6 +62,20 @@ const tocItemsBySlug = {
   'top-50-ai-tools': [
     { id: 'intro', label: 'Introduction' }, { id: 'beginners', label: 'Best Tools for Beginners' }, { id: 'design', label: 'Design & Visual Content' }, { id: 'video', label: 'Video Creation' }, { id: 'writing', label: 'Writing & Content' }, { id: 'audio', label: 'Audio & Voice' }, { id: 'presentations', label: 'Presentations' }, { id: 'development', label: 'Dev & Automation' }, { id: 'research', label: 'Research' }, { id: 'meetings', label: 'Meetings' }, { id: 'image-3d', label: 'Image & 3D' }, { id: 'productivity', label: 'Productivity' }, { id: 'community', label: 'Community & Resources' }, { id: 'support', label: 'Customer Support' }, { id: 'recommended', label: 'Recommended Tools' }, { id: 'takeaways', label: 'Key Takeaways' }, { id: 'cta', label: 'Join Community' },
   ],
+  'frontend-resources-2026': [
+    { id: 'intro', label: 'Introduction' },
+    { id: 'find-a-ui-starting-point', label: 'Find a UI starting point' },
+    { id: 'make-layout-and-css-easier', label: 'Make layout and CSS easier' },
+    { id: 'choose-colors-and-typography', label: 'Choose colors and typography' },
+    { id: 'add-icons-illustrations-and-imagery', label: 'Icons, illustrations, and imagery' },
+    { id: 'use-gradients-and-motion-with-purpose', label: 'Gradients and motion' },
+    { id: 'add-useful-interactions-and-data-visuals', label: 'Interactions and data visuals' },
+    { id: 'preview-test-and-improve-the-experience', label: 'Preview and test' },
+    { id: 'share-your-frontend-work', label: 'Share your work' },
+    { id: 'a-beginner-friendly-workflow', label: 'Beginner workflow' },
+    { id: 'final-thoughts', label: 'Final thoughts' },
+    { id: 'reference', label: 'Reference' },
+  ],
   'high-income-skills': [
     { id: 'intro', label: 'Introduction' }, { id: 'what-are', label: 'What Are High Income Skills' }, { id: 'why-learn', label: 'Why Students Must Learn' }, { id: 'top-skills', label: 'Top High Income Skills 2026' }, { id: 'why-not', label: "Why Students Don't Learn" }, { id: 'roadmap', label: '90-Day Roadmap' }, { id: 'example', label: 'Engineering Student Example' }, { id: 'takeaways', label: 'Key Takeaways' }, { id: 'cta', label: 'Join Biz-Creator Community' },
   ],
@@ -91,6 +107,7 @@ const renderBlogContent = (slug) => {
     case 'freelancing-roadmap': return <FreelancingRoadmapContent />;
     case 'how-to-do-content-research': return <ContentResearchContent />;
     case 'top-50-ai-tools': return <TopAIToolsContent />;
+    case 'frontend-resources-2026': return <FrontendResources2026Content />;
     case 'high-income-skills': return <HighIncomeSkillsContent />;
     case 'escape-the-matrix': return <EscapeMatrixContent />;
     case 'sales-and-marketing': return <SalesMarketingContent />;

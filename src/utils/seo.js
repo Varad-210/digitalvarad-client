@@ -86,6 +86,14 @@ export const BLOG_POST_SEO = {
     ogImage: `${BASE_URL}/og-ai-tools.png`,
     keyword: 'best AI tools for students to earn online 2026',
   },
+  'frontend-resources-2026': {
+    title: 'Frontend Resources to Build Better Websites in 2026 | VaradBuilds',
+    description:
+      'A practical, beginner-friendly guide to the best frontend resources for 2026 — UI kits, CSS helpers, design tools, typography, illustrations, motion libraries, and testing platforms.',
+    canonical: `${BASE_URL}/blog/frontend-resources-2026`,
+    ogImage: `${BASE_URL}/og-frontend-resources-2026.png`,
+    keyword: 'frontend resources for beginners 2026',
+  },
   'affiliate-marketing-growth': {
     title: "Why Beginners Don't Grow in Affiliate Marketing | VaradBuilds",
     description:
