@@ -152,7 +152,7 @@ const Products = () => {
         }
       ],
       outcome: "Build massive influence and authority, master public speaking and communication, create content that positions you as a thought leader, and monetize your expertise through multiple channels.",
-      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=lPC2QdX4/P0=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=t5AunlpUGcNOUCk0Q805RHq4OIAWi9aq"
+      affiliateLink: "https://www.bizgurukul.com/Signup.aspx?id=aBdsUosgN7I=&ref=tUq4wa7c8QNxtwMnsNUehA==&user_id=QRtS71KW9ac=&lid=t5AunlpUGcMKosaygpVrfZgGyDOzofvK"
     },
     {
       id: 5,
